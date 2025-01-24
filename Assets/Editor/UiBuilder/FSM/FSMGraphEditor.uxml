@@ -1,0 +1,18 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <Style src="project://database/Assets/Editor/UiBuilder/FSM/FSMGraphEditorStyles.uss?fileID=7433441132597879392&amp;guid=6c99ecbcd8f27394eb08fab283f596e0&amp;type=3#FSMGraphEditorStyles" />
+    <uie:Toolbar>
+        <uie:ToolbarMenu tabindex="-1" parse-escape-sequences="true" display-tooltip-when-elided="true" text="Assets" />
+    </uie:Toolbar>
+    <SplitView fixed-pane-initial-dimension="300" style="height: 235px;">
+        <ui:VisualElement name="LeftPannel" style="flex-grow: 1; height: 100%; width: 87px; background-color: rgba(0, 0, 0, 0);">
+            <ui:VisualElement name="inspector-container" style="flex-grow: 1;">
+                <ui:Label tabindex="-1" text="Inspector" parse-escape-sequences="true" display-tooltip-when-elided="true" style="background-color: rgb(37, 37, 37); -unity-background-image-tint-color: rgb(255, 255, 255); color: rgb(255, 255, 255);" />
+                <FSMInspectorView style="left: 0; top: 0; right: 0; bottom: 0; flex-grow: 1;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="RightPannel" style="flex-grow: 1;">
+            <ui:Label tabindex="-1" text="GraphView" parse-escape-sequences="true" display-tooltip-when-elided="true" style="background-color: rgb(37, 37, 37); color: rgb(255, 255, 255);" />
+            <FSMGraphView style="flex-grow: 1;" />
+        </ui:VisualElement>
+    </SplitView>
+</ui:UXML>
