@@ -22,6 +22,7 @@ public class LilGuyWander : MonoBehaviour, I_TransitionEvaluator
     private void Start()
     {
         wanderAngle = UnityEngine.Random.Range(0f, 360f);
+        this.sharedData = GetComponent<LilGuySharedData>();
     }
 
     public void Behave(State state)
@@ -53,7 +54,7 @@ public class LilGuyWander : MonoBehaviour, I_TransitionEvaluator
         return (circleCenter + displacement) - transform.position;
     }
 
-    private Vector3 calculateAvoidenceForce(Vector3 velocity)
+    public Vector3 calculateAvoidenceForce(Vector3 velocity)
     {
         velocity = Vector3.ClampMagnitude(velocity, this.maxSpeed);
         Vector3 start = transform.position + transform.forward * maxSpeed;
@@ -70,13 +71,13 @@ public class LilGuyWander : MonoBehaviour, I_TransitionEvaluator
         return avoidenceForce;
     }
 
-    private void Move(Vector3 velocity)
+    public void Move(Vector3 velocity)
     {
         velocity = Vector3.ClampMagnitude(velocity, maxSpeed);
         transform.position += velocity * Time.deltaTime;
     }
 
-    private void RotateTowards(Vector3 direction)
+    public void RotateTowards(Vector3 direction)
     {
         if (direction.sqrMagnitude > 0.01f)
         {
