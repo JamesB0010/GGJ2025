@@ -20,7 +20,6 @@ public class QuestManager : MonoBehaviour
 {
     [Header("Creatures")]
     public List<Creature> creaturesList = new List<Creature>();
-    //public GameObject[] featuredCreatures;
     public int numberOfCreatures = 3;
     private GameObject[] creatures;
     private BoxCollider spawnArea;
@@ -59,19 +58,14 @@ public class QuestManager : MonoBehaviour
     {
         // Running the Quest
         CurrentQuest();
-
-        /*
-        foreach (var key in creatureDictionary.Keys)
-        {
-            foreach (var value in creatureDictionary.Values)
-            {
-                Debug.Log("Creature: " + key + "Number In Scene: " + value);
-            }
-        }
-        */
-
-        // Testing specific creature tracking
-        //GetCreatureCount(featuredCreatures[0]);
+        
+        //foreach (var key in creatureDictionary.Keys)
+        //{
+        //    foreach (var value in creatureDictionary.Values)
+        //    {
+        //        Debug.Log("Creature: " + key + "Number In Scene: " + value);
+        //    }
+        //}
     }
 
     private void CurrentQuest()
@@ -130,17 +124,7 @@ public class QuestManager : MonoBehaviour
     // Get the creature count, used for tracking number of certain creatures in the scene
     private int GetCreatureCount(GameObject creaturePrefabCheck)
     {
-        // Go through each of the values
-        foreach (var value in creatureDictionary.Values)
-        {
-            // Only print and get the value of chosen creature
-            if (creatureDictionary.ContainsKey(creaturePrefabCheck))
-            {
-                Debug.Log(value);
-                return value;
-            }
-        }
-        return 0;
+        return creatureDictionary[creaturePrefabCheck];
     }
 
     private void UpdateCreatureListUI()
@@ -163,6 +147,7 @@ public class QuestManager : MonoBehaviour
                 // Set the image and name of the creature
                 TMP_Text creatureNameText = creatureEntry.transform.Find("Name").GetComponent<TMP_Text>();
                 Image creatureImageBox = creatureEntry.transform.Find("CreatureImg").GetComponent<Image>();
+                TMP_Text creatureCounter = creatureEntry.transform.Find("CaptureCount").GetComponent<TMP_Text>();
 
                 // If the creature name is found then change it
                 if (creatureNameText != null)
@@ -182,6 +167,16 @@ public class QuestManager : MonoBehaviour
                 else
                 {
                     Debug.Log("Can't find image");
+                }
+
+                // If the creature count is found then change it
+                if (creatureCounter != null)
+                {
+                    creatureCounter.text = GetCreatureCount(creature.creaturePrefab).ToString();
+                }
+                else
+                {
+                    Debug.Log("Can't find count");
                 }
             }
         }
