@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   guid: df4cd95178008864e8b3257ba267c287
   parent: {fileID: 11400000}
-  graphEditorPosition: {x: 530, y: 415}
+  graphEditorPosition: {x: 537.60004, y: 426.4}
   description: player tells the robot to collect the bubble
   EnterStateEvent:
     m_PersistentCalls:
@@ -43,13 +43,15 @@ MonoBehaviour:
     - stateTo: {fileID: -5551818321510390713}
       transitionHandleMethod: 2
       SelectedTransitionConditionEvaluator: 1
-      AgentPrefab: {fileID: 0}
+      AgentPrefab: {fileID: 5931975180441892522, guid: 6776a5c6893e19b4596a7fd117c30420,
+        type: 3}
       transitionConditions:
       - rid: 6112842128898129922
     - stateTo: {fileID: 1308565831893287894}
       transitionHandleMethod: 2
       SelectedTransitionConditionEvaluator: 1
-      AgentPrefab: {fileID: 0}
+      AgentPrefab: {fileID: 5931975180441892522, guid: 6776a5c6893e19b4596a7fd117c30420,
+        type: 3}
       transitionConditions:
       - rid: 6112842128898129923
   references:
@@ -138,13 +140,15 @@ MonoBehaviour:
     - stateTo: {fileID: 1308565831893287894}
       transitionHandleMethod: 2
       SelectedTransitionConditionEvaluator: 0
-      AgentPrefab: {fileID: 0}
+      AgentPrefab: {fileID: 5931975180441892522, guid: 6776a5c6893e19b4596a7fd117c30420,
+        type: 3}
       transitionConditions:
       - rid: 1485923461087363122
     - stateTo: {fileID: -9210791070343471647}
       transitionHandleMethod: 2
       SelectedTransitionConditionEvaluator: 0
-      AgentPrefab: {fileID: 0}
+      AgentPrefab: {fileID: 5931975180441892522, guid: 6776a5c6893e19b4596a7fd117c30420,
+        type: 3}
       transitionConditions:
       - rid: 6112842128898129921
   references:
@@ -198,7 +202,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   guid: d895f3982b6181b4e8bccee76c1e3282
   parent: {fileID: 11400000}
-  graphEditorPosition: {x: 255, y: 205}
+  graphEditorPosition: {x: 271.2, y: 212.79999}
   description: passive roaming idle for the robot when the player is not moving
   EnterStateEvent:
     m_PersistentCalls:
@@ -253,13 +257,15 @@ MonoBehaviour:
     - stateTo: {fileID: -5551818321510390713}
       transitionHandleMethod: 2
       SelectedTransitionConditionEvaluator: 2
-      AgentPrefab: {fileID: 0}
+      AgentPrefab: {fileID: 5931975180441892522, guid: 6776a5c6893e19b4596a7fd117c30420,
+        type: 3}
       transitionConditions:
       - rid: 8113285882412007840
     - stateTo: {fileID: -9210791070343471647}
       transitionHandleMethod: 2
       SelectedTransitionConditionEvaluator: 2
-      AgentPrefab: {fileID: 0}
+      AgentPrefab: {fileID: 5931975180441892522, guid: 6776a5c6893e19b4596a7fd117c30420,
+        type: 3}
       transitionConditions:
       - rid: 6112842128898129924
   references:
