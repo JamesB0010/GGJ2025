@@ -12,6 +12,7 @@ public class QuestManager : MonoBehaviour
     public GameObject[] featuredCreatures;
     public int numberOfCreatures = 3;
     private GameObject[] creatures;
+    private BoxCollider spawnArea;
 
     [Header("Questing")]
     public int requiredCreatures;
@@ -24,6 +25,9 @@ public class QuestManager : MonoBehaviour
     {
         // Setting Creatures needed to be collected to number of spawned ones
         requiredCreatures = numberOfCreatures;
+
+        // Get the box collider on gameobject
+        spawnArea = GetComponent<BoxCollider>();
 
         // Used to spawn in creatures
         CreatureSpawn();
@@ -59,8 +63,14 @@ public class QuestManager : MonoBehaviour
             // Go through creatures that should be in the level and randomly adding them
             int creatureToAdd = Random.Range(0, featuredCreatures.Length);
 
+            // Spawn creatures in area of box collider, this size is set in the inspector
+            var spawnBounds = spawnArea.bounds;
+            var areaX = Random.Range(spawnBounds.min.x, spawnBounds.max.x);
+            var areaZ = Random.Range(spawnBounds.min.z, spawnBounds.max.z);
+            Vector3 spawnPos = new Vector3(areaX, transform.position.y, areaZ);
+
             // Add creature to scene
-            GameObject newCreature = Instantiate(featuredCreatures[creatureToAdd], transform.position, Quaternion.identity);
+            GameObject newCreature = Instantiate(featuredCreatures[creatureToAdd], spawnPos, Quaternion.identity);
 
             // Add creature to creatures array
             creatures[i] = newCreature;
