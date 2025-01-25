@@ -164,7 +164,7 @@ MonoBehaviour:
   stateConnections:
     stateConnections:
     - stateTo: {fileID: 8618638473977610625}
-      transitionHandleMethod: 3
+      transitionHandleMethod: 2
       SelectedTransitionConditionEvaluator: 0
       AgentPrefab: {fileID: 3172299067103179785, guid: 168c3ff3b03a63e409857d3dcfecc7b3,
         type: 3}
@@ -234,7 +234,7 @@ MonoBehaviour:
   stateConnections:
     stateConnections:
     - stateTo: {fileID: 8616626906314292044}
-      transitionHandleMethod: 3
+      transitionHandleMethod: 2
       SelectedTransitionConditionEvaluator: 1
       AgentPrefab: {fileID: 3172299067103179785, guid: 168c3ff3b03a63e409857d3dcfecc7b3,
         type: 3}
