@@ -1,0 +1,4 @@
+phong1 = robot body
+phong2 = hat
+phong3 = screen
+phong4 = tracks
