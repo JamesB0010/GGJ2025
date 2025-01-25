@@ -1850,6 +1850,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: LilGuyCreature
       objectReference: {fileID: 0}
+    - target: {fileID: 2904366249611980331, guid: 737c44d3f6b815144ad4286a81f43d17,
+        type: 3}
+      propertyPath: upwardSpeed
+      value: 3.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 2904366249611980331, guid: 737c44d3f6b815144ad4286a81f43d17,
+        type: 3}
+      propertyPath: rotationSpeed
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 6215248010419028535, guid: 737c44d3f6b815144ad4286a81f43d17,
         type: 3}
       propertyPath: m_LocalPosition.x
