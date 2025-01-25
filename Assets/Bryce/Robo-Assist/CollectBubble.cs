@@ -6,11 +6,10 @@ using UnityEngine.AI;
 public class CollectBubble : MonoBehaviour, I_TransitionEvaluator
 {
     [SerializeField] GameObject Target;
-    [SerializeField] float Speed;
     [SerializeField] float Rotation;
-    [SerializeField] float StopDistance;
     [SerializeField] float AccepableMovementAngle;
     [SerializeField] Vector3 TargetFloorPosition;
+    [SerializeField] private GameObject explosionParticle;
 
     [SerializeField] BoolReference isCollecting;
 
@@ -19,10 +18,6 @@ public class CollectBubble : MonoBehaviour, I_TransitionEvaluator
     public void InitialiseTarget(GameObject InTarget)
     {
         Target = InTarget;
-    }
-    public void EnterState(State state)
-    {
-
     }
 
     public void Behave(State state)
@@ -48,12 +43,11 @@ public class CollectBubble : MonoBehaviour, I_TransitionEvaluator
         bool inPosToCollect = this.transform.position.x == Target.transform.position.x && this.transform.position.z == Target.transform.position.z;
         if (inPosToCollect)
         {
-            
+            Destroy(this.Target.gameObject);
             state.Transition(0);
         }
 
     }
-
     public void ExitState(State state)
     {
         isCollecting.SetValue(false);

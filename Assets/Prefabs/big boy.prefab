@@ -73,6 +73,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[14]
       value: 
       objectReference: {fileID: 2100000, guid: 71fbc559816a3c74dac9a20e05401507, type: 2}
+    - target: {fileID: -2570803219578318749, guid: 6641d443df9fd5d49a8ffb3091fd9e60,
+        type: 3}
+      propertyPath: m_Materials.Array.data[16]
+      value: 
+      objectReference: {fileID: 2100000, guid: 398fab37168e9c74c8e32252bae841e8, type: 2}
     - target: {fileID: 919132149155446097, guid: 6641d443df9fd5d49a8ffb3091fd9e60,
         type: 3}
       propertyPath: m_Name
@@ -267,7 +272,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 848d5d47cc73d0b4e92f1ff85140f797, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 0
+  maxSpeed: 10
   circleDistance: 3.86
   circleRadius: 0.66
   angleChange: 30
@@ -313,4 +318,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21f12081c97076942b0a0951c49bd4c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  visualTransform: {fileID: 0}
   rotationSpeed: 33
+  upwardSpeed: 0
