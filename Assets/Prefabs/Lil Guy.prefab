@@ -414,7 +414,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   runAwaySpeed: 50
-  noLongerFleeRange: 0
+  noLongerFleeRange: 10
 --- !u!114 &666971378135192766
 MonoBehaviour:
   m_ObjectHideFlags: 0
