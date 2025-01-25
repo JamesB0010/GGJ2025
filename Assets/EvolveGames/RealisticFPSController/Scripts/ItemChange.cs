@@ -13,7 +13,7 @@ namespace EvolveGames
         [SerializeField] bool LoopItems = true;
         [SerializeField, Tooltip("You can add your new item here.")] GameObject[] Items;
         [SerializeField, Tooltip("These logos must have the same order as the items.")] Sprite[] ItemLogos;
-        [SerializeField] int ItemIdInt;
+        [SerializeField] public int ItemIdInt{get; private set;}
         int MaxItems;
         int ChangeItemInt;
         [HideInInspector] public bool DefiniteHide;
