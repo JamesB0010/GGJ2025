@@ -19,6 +19,5 @@ public class LilGuyCaptured : MonoBehaviour
     {
         visualTransform.Rotate(this.rotationDirection, this.rotationSpeed * Time.deltaTime);
         visualTransform.position += Vector3.up * upwardSpeed * Time.deltaTime;
-        
     }
 }
