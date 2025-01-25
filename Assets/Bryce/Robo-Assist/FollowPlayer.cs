@@ -34,7 +34,7 @@ public class FollowPlayer : MonoBehaviour, I_TransitionEvaluator
             state.Transition(1);
         }
         // we want to only do this if we are a certain range from the player
-        if (Vector3.Distance(Player.transform.position, this.transform.position) > 3 && !isCollecting.GetValue())
+        if (Vector3.Distance(Player.transform.position, this.transform.position) > 3)
         {
             Vector3 direction = (Player.transform.position - transform.position).normalized;
             float distanceToTarget = Vector3.Distance(transform.position, Player.transform.position);
