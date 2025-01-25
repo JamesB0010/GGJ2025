@@ -45,12 +45,12 @@ public class CollectBubble : MonoBehaviour, I_TransitionEvaluator
         else{
             this.GetComponent<NavMeshAgent>().SetDestination(TargetFloorPosition);
         }
-        // bool inPosToCollect = this.transform.position.x == Target.transform.position.x && this.transform.position.z == Target.transform.position.z;
-        // if (inPosToCollect)
-        // {
-        //     // do collection stuff
-        //     state.Transition(0);
-        // }
+        bool inPosToCollect = this.transform.position.x == Target.transform.position.x && this.transform.position.z == Target.transform.position.z;
+        if (inPosToCollect)
+        {
+            
+            state.Transition(0);
+        }
 
     }
 
