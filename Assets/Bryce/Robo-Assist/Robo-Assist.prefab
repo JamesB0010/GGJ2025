@@ -770,10 +770,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
-  Speed: 30
+  Speed: 15
   Rotation: 10
-  StopDistance: 1
-  AccepableMovementAngle: 1
+  StopDistance: 5
+  AccepableMovementAngle: 5
   isMoving: {fileID: 11400000, guid: 8fbd38c032a3fe741b89c78e4c253674, type: 2}
   isCollecting: {fileID: 11400000, guid: be9d8f9f6970e1145ba1d21b25f1275f, type: 2}
 --- !u!114 &4296203008924405074
@@ -788,6 +788,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e6f415648beec84c8d7fb7fe33a70f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Target: {fileID: 0}
+  Speed: 15
+  Rotation: 10
+  StopDistance: 0.3
+  AccepableMovementAngle: 5
+  TargetFloorPosition: {x: 0, y: 0, z: 0}
+  isCollecting: {fileID: 11400000, guid: be9d8f9f6970e1145ba1d21b25f1275f, type: 2}
 --- !u!114 &6533707494047061708
 MonoBehaviour:
   m_ObjectHideFlags: 0

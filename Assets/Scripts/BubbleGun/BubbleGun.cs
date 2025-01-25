@@ -44,9 +44,6 @@ public class BubbleGun : MonoBehaviour
     {
         // this fucking sucks but change this item ID to whatever the bubble gun is assigned to.
         if(playerLoadout.ItemIdInt == 0){
-            if(Input.GetMouseButtonDown(1)){
-                Instantiate(bubbleProjectilePrefab, new Vector3(0,0,0), Quaternion.identity);
-            }
 
             if(Input.GetMouseButton(0)){
                 // Shitty hack time

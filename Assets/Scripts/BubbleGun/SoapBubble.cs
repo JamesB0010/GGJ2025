@@ -50,17 +50,12 @@ public class SoapBubble : MonoBehaviour
     }
     void OnTriggerEnter(Collider _c)
     {
-        Debug.Log("Trigger Enter Called");
-
         if(_c.tag == "Capturable"){
-            Debug.Log($"Collision with Big Bubble against {_c.gameObject.name}");
             CatchableAgent contactAgent  = _c.gameObject.GetComponent<CatchableAgent>();
-            if(contactAgent == null){Debug.Log($"Unable to extract CatchableAgent from {_c.gameObject.name}");}
-            // 1: bubble is big enough |-| 2: Target is moist enough |-| 3: Bubble is not already full
             if(!isFull && contactAgent.moistness >= contactAgent.moistnessThreshold && transform.localScale.x >= contactAgent.minBubbleSize){
                 // Capture the thing:
                 // Snap bubble to creature center
-                transform.position = contactAgent.transform.position;
+                transform.position = contactAgent.bubbleAnchor.position;
                 // probably do some size snapping, either by shrinking this or expanding the bubble
                 // child this object to the bubble
                 contactAgent.transform.parent = transform;
