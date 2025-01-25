@@ -8,7 +8,9 @@ public class SoapBubble : MonoBehaviour
 {
     [SerializeField] bool isInMovement = false; // turned on after being fired
     [SerializeField] public bool isFull = false; // turned on after colliding with a damp creature
+    [Header("Capture Things")]
     [SerializeField] SphereCollider bubbleCollider;
+    public static string captureEventName = "CreatureCaptured";
 
     [Header("Movement Parameters")]
     Vector3 movementDirection = new Vector3(0,0,0);
@@ -65,6 +67,9 @@ public class SoapBubble : MonoBehaviour
                 // make the bubble float upwards
                 isFull = true;
                 contactAgent.isCaptured = true;
+                
+                // Trigger the IsCaptured event, passing in contactAgent
+                contactAgent.captured?.Invoke();
             }
             else{
                 PopBubble();
