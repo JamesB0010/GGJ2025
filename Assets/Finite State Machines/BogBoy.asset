@@ -19,7 +19,7 @@ MonoBehaviour:
   EnterStateEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2236431821900495595, guid: 8a5dca819b3c32644b9672ab9c8a0cee,
+      - m_Target: {fileID: 8408382408430415586, guid: 168c3ff3b03a63e409857d3dcfecc7b3,
           type: 3}
         m_TargetAssemblyTypeName: LilGuyCaptured, Assembly-CSharp
         m_MethodName: Enter
@@ -35,7 +35,7 @@ MonoBehaviour:
   BehaveEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2236431821900495595, guid: 8a5dca819b3c32644b9672ab9c8a0cee,
+      - m_Target: {fileID: 8408382408430415586, guid: 168c3ff3b03a63e409857d3dcfecc7b3,
           type: 3}
         m_TargetAssemblyTypeName: LilGuyCaptured, Assembly-CSharp
         m_MethodName: Behave
@@ -79,7 +79,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7d5b20f59a6eab44490504ee8e1cb69f, type: 3}
-  m_Name: LilGuy
+  m_Name: BogBoy
   m_EditorClassIdentifier: 
   readyToChangeState: 0
   newStateToChangeTo: {fileID: 0}
@@ -145,7 +145,7 @@ MonoBehaviour:
   BehaveEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 9122813975425287443, guid: 8a5dca819b3c32644b9672ab9c8a0cee,
+      - m_Target: {fileID: 3419232690522894855, guid: 168c3ff3b03a63e409857d3dcfecc7b3,
           type: 3}
         m_TargetAssemblyTypeName: LilGuyWander, Assembly-CSharp
         m_MethodName: Behave
@@ -164,9 +164,9 @@ MonoBehaviour:
   stateConnections:
     stateConnections:
     - stateTo: {fileID: 8618638473977610625}
-      transitionHandleMethod: 2
+      transitionHandleMethod: 3
       SelectedTransitionConditionEvaluator: 0
-      AgentPrefab: {fileID: 866312037972305148, guid: 8a5dca819b3c32644b9672ab9c8a0cee,
+      AgentPrefab: {fileID: 3172299067103179785, guid: 168c3ff3b03a63e409857d3dcfecc7b3,
         type: 3}
       transitionConditions:
       - rid: 8061473599240798238
@@ -215,7 +215,7 @@ MonoBehaviour:
   BehaveEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8744461054770831830, guid: 8a5dca819b3c32644b9672ab9c8a0cee,
+      - m_Target: {fileID: 8356241152294902302, guid: 168c3ff3b03a63e409857d3dcfecc7b3,
           type: 3}
         m_TargetAssemblyTypeName: LilGuyRunAway, Assembly-CSharp
         m_MethodName: Behave
@@ -234,9 +234,9 @@ MonoBehaviour:
   stateConnections:
     stateConnections:
     - stateTo: {fileID: 8616626906314292044}
-      transitionHandleMethod: 2
+      transitionHandleMethod: 3
       SelectedTransitionConditionEvaluator: 1
-      AgentPrefab: {fileID: 866312037972305148, guid: 8a5dca819b3c32644b9672ab9c8a0cee,
+      AgentPrefab: {fileID: 3172299067103179785, guid: 168c3ff3b03a63e409857d3dcfecc7b3,
         type: 3}
       transitionConditions:
       - rid: 8061473599240798393
