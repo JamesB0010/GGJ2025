@@ -76,7 +76,7 @@ public class BubbleGun : MonoBehaviour
                 }
             }
             else if(Input.GetMouseButtonUp(0)){
-                Debug.Log($"Shot Fired after {chargeTimer} seconds"); // oooh look at me i can use string interpolation
+                //Debug.Log($"Shot Fired after {chargeTimer} seconds"); // oooh look at me i can use string interpolation
                 
                 if(chargeTimer > minChargeTime){
                     FireChargeShot(currentBubble.gameObject);

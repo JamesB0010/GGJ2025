@@ -7,7 +7,7 @@ using UnityEngine;
 public class SoapBubble : MonoBehaviour
 {
     [SerializeField] bool isInMovement = false; // turned on after being fired
-    [SerializeField] bool isFull; // turned on after colliding with a damp creature
+    [SerializeField] public bool isFull = false; // turned on after colliding with a damp creature
     [SerializeField] SphereCollider bubbleCollider;
 
     [Header("Movement Parameters")]
@@ -44,6 +44,29 @@ public class SoapBubble : MonoBehaviour
             }
 
             transform.position += (movementVector * Time.deltaTime);
+        }
+    }
+    void OnTriggerEnter(Collider _c)
+    {
+        Debug.Log("Trigger Enter Called");
+
+        if(_c.tag == "Capturable"){
+            Debug.Log($"Collision with Big Bubble against {_c.gameObject.name}");
+            CatchableAgent contactAgent  = _c.gameObject.GetComponent<CatchableAgent>();
+            if(contactAgent == null){Debug.Log($"Unable to extract CatchableAgent from {_c.gameObject.name}");}
+            // 1: bubble is big enough |-| 2: Target is moist enough |-| 3: Bubble is not already full
+            if(!isFull && contactAgent.moistness >= contactAgent.moistnessThreshold && transform.localScale.x >= contactAgent.minBubbleSize){
+                // Capture the thing:
+                // Snap bubble to creature center
+                transform.position = contactAgent.transform.position;
+                // probably do some size snapping, either by shrinking this or expanding the bubble
+                // child this object to the bubble
+                contactAgent.transform.parent = transform;
+                // make the bubble float upwards
+                isFull = true;
+                contactAgent.isCaptured = true;
+            }
+            // else pop the contactBubble
         }
     }
 
