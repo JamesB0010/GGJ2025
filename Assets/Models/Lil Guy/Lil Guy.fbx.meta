@@ -3,7 +3,22 @@ guid: 4f88d14da4c780b49bba8ffe2dfea247
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Body
+    second: {fileID: 2100000, guid: 33bf03d3b64c25a488390b506d15017f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Iris.Low
+    second: {fileID: 2100000, guid: 1b937764d63c16643b7cd1a38f765c43, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sclera.Low.001
+    second: {fileID: 2100000, guid: 43cc531f5cd9cda4289045ad21842fef, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
