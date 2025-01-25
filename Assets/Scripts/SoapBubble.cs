@@ -33,7 +33,7 @@ public class SoapBubble : MonoBehaviour
             Vector3 movementVector = new Vector3(0,0,0);
             if(!isFull){
                 // Forward part of the movement
-                movementVector = movementDirection * forwardSpeed;
+                movementVector = transform.forward * forwardSpeed;
 
                 // Spirally drift movement TODO
                 // movementVector += transform.up * driftSpeed * Mathf.Sin(Time.time);
@@ -43,13 +43,12 @@ public class SoapBubble : MonoBehaviour
                 movementVector += Vector3.up * verticalFloatSpeed;
             }
 
-            transform.Translate(movementVector * Time.deltaTime);
+            transform.position += (movementVector * Time.deltaTime);
         }
     }
 
-    public void OnGunRelease(Vector3 _dir)
+    public void OnGunRelease()
     {
-        movementDirection = _dir;
         isInMovement = true;
         bubbleCollider.enabled = true;
     }

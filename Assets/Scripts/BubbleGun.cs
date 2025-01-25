@@ -96,10 +96,14 @@ public class BubbleGun : MonoBehaviour
 
     private void FireChargeShot(GameObject bubble)
     {
-        Vector3 dir = new Vector3(0,0,0);
         // TODO Fire the bubble in such a direction that it goes to the center of the screen.
-        // Look at this when im not fatigued.
-        currentBubble.OnGunRelease(dir);
+        Ray aimRay = playerCam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
+        if(Physics.Raycast(aimRay, out RaycastHit hit, Mathf.Infinity)){
+            Vector3 aimPoint = hit.point;
+            Debug.DrawLine(currentBubble.transform.position, hit.point, Color.red, 5f);
+            currentBubble.transform.LookAt(aimPoint);
+        }
+        currentBubble.OnGunRelease();
         currentBubble = null;
     }
 }
