@@ -5,12 +5,14 @@ using System.Linq;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 [System.Serializable]
 public class Creature
 {
-    public string Name;
+    public string name;
+    public Sprite creatureImage;
     public GameObject creaturePrefab;
 }
 
@@ -152,13 +154,35 @@ public class QuestManager : MonoBehaviour
         // Add each creature to the ui list
         foreach (var creature in creaturesList)
         {
-            GameObject creatureEntry = Instantiate(creatureEntryPrefab, paperContent);
-
-            TMP_Text creatureNameText = creatureEntry.transform.Find("Name").GetComponent<TMP_Text>();
-
-            if (creatureNameText != null)
+            // Only add to list if the creature exists in the dictionary
+            if (creatureDictionary.ContainsKey(creature.creaturePrefab))
             {
-                creatureNameText.text = creature.Name;
+                // Create entry from prefab and add to display
+                GameObject creatureEntry = Instantiate(creatureEntryPrefab, paperContent);
+
+                // Set the image and name of the creature
+                TMP_Text creatureNameText = creatureEntry.transform.Find("Name").GetComponent<TMP_Text>();
+                Image creatureImageBox = creatureEntry.transform.Find("CreatureImg").GetComponent<Image>();
+
+                // If the creature name is found then change it
+                if (creatureNameText != null)
+                {
+                    creatureNameText.text = creature.name;
+                }
+                else
+                {
+                    Debug.Log("Can't find name");
+                }
+
+                // If the creature image is found then change it
+                if (creatureImageBox != null)
+                {
+                    creatureImageBox.sprite = creature.creatureImage;
+                }
+                else
+                {
+                    Debug.Log("Can't find image");
+                }
             }
         }
     }
