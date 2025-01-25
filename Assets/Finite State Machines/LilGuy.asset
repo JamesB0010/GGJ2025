@@ -92,24 +92,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   stateConnections:
-    stateConnections:
-    - stateTo: {fileID: 8618638473977610625}
-      transitionHandleMethod: 2
-      SelectedTransitionConditionEvaluator: 0
-      AgentPrefab: {fileID: 866312037972305148, guid: 8a5dca819b3c32644b9672ab9c8a0cee,
-        type: 3}
-      transitionConditions:
-      - rid: 8061473599240798208
+    stateConnections: []
   references:
     version: 2
-    RefIds:
-    - rid: 8061473599240798208
-      type: {class: FloatTransitionCondition, ns: , asm: Assembly-CSharp}
-      data:
-        transitionHandledByAgent: 0
-        valueToTest: {fileID: 0}
-        comparisonOperator: {fileID: 0}
-        comparand: 0
+    RefIds: []
 --- !u!114 &8618638473977610625
 MonoBehaviour:
   m_ObjectHideFlags: 0
