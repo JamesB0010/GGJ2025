@@ -60,7 +60,7 @@ public class FollowPlayer : MonoBehaviour, I_TransitionEvaluator
 
     public bool EvaluateTransition(int connectionIndex)
     {
-        if (!isMoving.GetValue())
+        if (!isMoving.GetValue() && !isCollecting.GetValue())
         {
             return true;
         }

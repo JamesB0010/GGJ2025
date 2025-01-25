@@ -789,10 +789,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 0}
-  Speed: 0
-  Rotation: 0
-  StopDistance: 0
-  AccepableMovementAngle: 0
+  Speed: 15
+  Rotation: 10
+  StopDistance: 0.3
+  AccepableMovementAngle: 5
+  TargetFloorPosition: {x: 0, y: 0, z: 0}
   isCollecting: {fileID: 11400000, guid: be9d8f9f6970e1145ba1d21b25f1275f, type: 2}
 --- !u!114 &6533707494047061708
 MonoBehaviour:

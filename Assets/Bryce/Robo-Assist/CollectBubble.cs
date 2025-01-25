@@ -10,17 +10,16 @@ public class CollectBubble : MonoBehaviour, I_TransitionEvaluator
     [SerializeField] float Rotation;
     [SerializeField] float StopDistance;
     [SerializeField] float AccepableMovementAngle;
+    [SerializeField] Vector3 TargetFloorPosition;
 
     [SerializeField] BoolReference isCollecting;
 
     CharacterController controller;
-    void Start()
-    {
-        FindObjectOfType<SetRobotCollection>().GetTarget.AddListener((GameObject InTarget) =>{
-            Target = InTarget;
-        });
-    }
 
+    public void InitialiseTarget(GameObject InTarget)
+    {
+        Target = InTarget;
+    }
     public void EnterState(State state)
     {
 
@@ -28,10 +27,12 @@ public class CollectBubble : MonoBehaviour, I_TransitionEvaluator
 
     public void Behave(State state)
     {
-
+        if(NavMesh.SamplePosition(Target.transform.position, out NavMeshHit nmh, Mathf.Infinity, NavMesh.AllAreas)){
+            TargetFloorPosition = nmh.position;
+        }
         // we want to only do this if we are a certain range from the player
-        Vector3 direction = (Target.transform.position - transform.position).normalized;
-        float distanceToTarget = Vector3.Distance(transform.position, Target.transform.position);
+        Vector3 direction = (TargetFloorPosition - transform.position).normalized;
+        float distanceToTarget = Vector3.Distance(transform.position, TargetFloorPosition);
 
         float angleToTarget = Vector3.Angle(transform.forward, direction);
 
@@ -42,7 +43,7 @@ public class CollectBubble : MonoBehaviour, I_TransitionEvaluator
         }
         else if (distanceToTarget > StopDistance)
         {
-            this.GetComponent<NavMeshAgent>().SetDestination(Target.transform.position);
+            this.GetComponent<NavMeshAgent>().SetDestination(TargetFloorPosition);
         }
         bool inPosToCollect = this.transform.position.x == Target.transform.position.x && this.transform.position.z == Target.transform.position.z;
         if (inPosToCollect)
@@ -50,6 +51,7 @@ public class CollectBubble : MonoBehaviour, I_TransitionEvaluator
             // do collection stuff
             state.Transition(0);
         }
+
     }
 
     public void ExitState(State state)
