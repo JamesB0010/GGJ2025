@@ -18,7 +18,8 @@ public class Idle : MonoBehaviour, I_TransitionEvaluator
     [SerializeField] BoolReference isCollecting;
     public void EnterState(State state)
     {
-        isPlayerMoving.SetValue(false);
+        // isPlayerMoving.SetValue(false);
+        isCollecting.SetValue(false);
     }
 
     public void Behave(State state)
@@ -69,7 +70,7 @@ public class Idle : MonoBehaviour, I_TransitionEvaluator
 
     public bool EvaluateTransition(int connectionIndex)
     {
-        if (isPlayerMoving.GetValue())
+        if (isPlayerMoving.GetValue() && !isCollecting.GetValue())
         {
             return true;
         }
