@@ -66,8 +66,16 @@ public class SoapBubble : MonoBehaviour
                 isFull = true;
                 contactAgent.isCaptured = true;
             }
-            // else pop the contactBubble
+            else{
+                PopBubble();
+            } 
         }
+    }
+
+    public void PopBubble()
+    {
+        // some nice splashy particle here
+        Destroy(this.gameObject);
     }
 
     public void OnGunRelease()

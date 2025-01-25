@@ -207,6 +207,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LightAttackPS
       objectReference: {fileID: 0}
+    - target: {fileID: 6802019836356055994, guid: e9ba806ce0877cc4091b6ce0d712e91c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -834,7 +839,8 @@ MonoBehaviour:
     type: 3}
   currentBubble: {fileID: 0}
   sizeIncreaseRate: 0.5
-  lightAttackPS: {fileID: 965538278}
+  lightAttackPrefab: {fileID: 6802019836356055994, guid: e9ba806ce0877cc4091b6ce0d712e91c,
+    type: 3}
   maxFuel: 0
   currentFuel: 0
   refuelRate: 0
