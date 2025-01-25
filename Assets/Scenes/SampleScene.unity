@@ -300,6 +300,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lil Guy (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 866312037972305148, guid: 8a5dca819b3c32644b9672ab9c8a0cee,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9122813975425287443, guid: 8a5dca819b3c32644b9672ab9c8a0cee,
         type: 3}
       propertyPath: target
@@ -387,6 +392,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Lil Guy (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 866312037972305148, guid: 8a5dca819b3c32644b9672ab9c8a0cee,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9122813975425287443, guid: 8a5dca819b3c32644b9672ab9c8a0cee,
         type: 3}
@@ -813,6 +823,32 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 0ad1e7c3106b8b84b9dc59de4b38df1f,
         type: 3}
+    - target: {fileID: 4582019822591254233, guid: a01c7516e659bdf4b9897ab54df69b69,
+        type: 3}
+      propertyPath: m_BackGroundColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4582019822591254233, guid: a01c7516e659bdf4b9897ab54df69b69,
+        type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4582019822591254233, guid: a01c7516e659bdf4b9897ab54df69b69,
+        type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4582019822591254233, guid: a01c7516e659bdf4b9897ab54df69b69,
+        type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4582019824381016672, guid: a01c7516e659bdf4b9897ab54df69b69,
+        type: 3}
+      propertyPath: isMoving
+      value: 
+      objectReference: {fileID: 11400000, guid: 8fbd38c032a3fe741b89c78e4c253674,
+        type: 2}
     - target: {fileID: 4582019824381016673, guid: a01c7516e659bdf4b9897ab54df69b69,
         type: 3}
       propertyPath: m_Name
@@ -1166,6 +1202,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Lil Guy (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 866312037972305148, guid: 8a5dca819b3c32644b9672ab9c8a0cee,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9122813975425287443, guid: 8a5dca819b3c32644b9672ab9c8a0cee,
         type: 3}
@@ -1606,6 +1647,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Lil Guy (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 866312037972305148, guid: 8a5dca819b3c32644b9672ab9c8a0cee,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9122813975425287443, guid: 8a5dca819b3c32644b9672ab9c8a0cee,
         type: 3}
@@ -2567,6 +2613,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lil Guy (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 866312037972305148, guid: 8a5dca819b3c32644b9672ab9c8a0cee,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9122813975425287443, guid: 8a5dca819b3c32644b9672ab9c8a0cee,
         type: 3}
       propertyPath: target
@@ -2879,6 +2930,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lil Guy (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 866312037972305148, guid: 8a5dca819b3c32644b9672ab9c8a0cee,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9122813975425287443, guid: 8a5dca819b3c32644b9672ab9c8a0cee,
         type: 3}
       propertyPath: target
@@ -2967,6 +3023,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lil Guy
       objectReference: {fileID: 0}
+    - target: {fileID: 8744461054770831830, guid: 8a5dca819b3c32644b9672ab9c8a0cee,
+        type: 3}
+      propertyPath: noLongerFleeRange
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 9122813975425287443, guid: 8a5dca819b3c32644b9672ab9c8a0cee,
         type: 3}
       propertyPath: target
@@ -2976,6 +3037,11 @@ PrefabInstance:
         type: 3}
       propertyPath: itemToAvoid
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 9122813975425287443, guid: 8a5dca819b3c32644b9672ab9c8a0cee,
+        type: 3}
+      propertyPath: playerDetectionRange
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

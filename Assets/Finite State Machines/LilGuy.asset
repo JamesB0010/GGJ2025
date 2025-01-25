@@ -92,10 +92,24 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   stateConnections:
-    stateConnections: []
+    stateConnections:
+    - stateTo: {fileID: 8618638473977610625}
+      transitionHandleMethod: 2
+      SelectedTransitionConditionEvaluator: 0
+      AgentPrefab: {fileID: 866312037972305148, guid: 8a5dca819b3c32644b9672ab9c8a0cee,
+        type: 3}
+      transitionConditions:
+      - rid: 8061473599240798238
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 8061473599240798238
+      type: {class: FloatTransitionCondition, ns: , asm: Assembly-CSharp}
+      data:
+        transitionHandledByAgent: 0
+        valueToTest: {fileID: 0}
+        comparisonOperator: {fileID: 0}
+        comparand: 0
 --- !u!114 &8618638473977610625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,7 +124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   guid: f64a258027d56424abb837fcad4288fe
   parent: {fileID: 11400000}
-  graphEditorPosition: {x: 279.32407, y: 288}
+  graphEditorPosition: {x: 288, y: 296.8}
   description: 
   EnterStateEvent:
     m_PersistentCalls:
@@ -135,7 +149,21 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   stateConnections:
-    stateConnections: []
+    stateConnections:
+    - stateTo: {fileID: 8616626906314292044}
+      transitionHandleMethod: 2
+      SelectedTransitionConditionEvaluator: 1
+      AgentPrefab: {fileID: 866312037972305148, guid: 8a5dca819b3c32644b9672ab9c8a0cee,
+        type: 3}
+      transitionConditions:
+      - rid: 8061473599240798393
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 8061473599240798393
+      type: {class: FloatTransitionCondition, ns: , asm: Assembly-CSharp}
+      data:
+        transitionHandledByAgent: 0
+        valueToTest: {fileID: 0}
+        comparisonOperator: {fileID: 0}
+        comparand: 0
