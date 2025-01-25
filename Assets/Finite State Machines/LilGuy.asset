@@ -76,7 +76,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 9122813975425287443, guid: 8a5dca819b3c32644b9672ab9c8a0cee,
           type: 3}
-        m_TargetAssemblyTypeName: LilGuyWonder, Assembly-CSharp
+        m_TargetAssemblyTypeName: LilGuyWander, Assembly-CSharp
         m_MethodName: Behave
         m_Mode: 0
         m_Arguments:

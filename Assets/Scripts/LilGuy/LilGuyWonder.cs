@@ -4,67 +4,63 @@ using UnityEngine;
 public class LilGuyWander : MonoBehaviour
 {
     [Header("Wander Settings")]
-    [SerializeField] private float speed = 3f;
     [SerializeField] private float maxSpeed = 5f;
     [SerializeField] private float circleDistance = 2f;
     [SerializeField] private float circleRadius = 1f;
     [SerializeField] private float angleChange = 30f;
+    [SerializeField] private float lookAheadDistance;
 
     private Vector3 targetDirection;
     private float wanderAngle;
+
+    [SerializeField] private Transform[] itemsToAvoid;
 
     private void Start()
     {
         wanderAngle = UnityEngine.Random.Range(0f, 360f);
     }
 
-    private void Update()
+    public void Behave(State state)
     {
-        Wander();
-    }
-
-    private void Wander()
-    {
-        // Calculate wander force and update target direction
-        Vector3 wanderForce = CalculateWanderForce();
-        targetDirection = wanderForce.normalized;
-
-        // Move and rotate the object
-        Move(targetDirection);
-        RotateTowards(targetDirection);
+        Vector3 velocity = this.CalculateWanderForce();
+        velocity += this.calculateAvoidenceForce(velocity);
+        this.Move(velocity);
+        this.RotateTowards(velocity.normalized);
     }
 
     private Vector3 CalculateWanderForce()
     {
-        // Calculate the circle center in front of the object
-        Vector3 circleCenter = transform.forward * circleDistance;
+        // Calculate the circle center in world space
+        Vector3 circleCenter = transform.position + transform.forward * circleDistance;
 
-        // Calculate displacement from the circle center
-        Vector3 displacement = new Vector3(0, 0, -circleRadius);
-        displacement = SetAngle(displacement);
+        // Calculate displacement based on wander angle
+        Vector3 displacement = new Vector3(
+            Mathf.Cos(wanderAngle * Mathf.Deg2Rad) * circleRadius,
+            0,
+            Mathf.Sin(wanderAngle * Mathf.Deg2Rad) * circleRadius
+        );
 
         // Update wander angle
-        wanderAngle = (wanderAngle + UnityEngine.Random.Range(-angleChange / 2f, angleChange / 2f)) % 360;
+        wanderAngle = Mathf.Repeat(wanderAngle + UnityEngine.Random.Range(-angleChange / 2f, angleChange / 2f), 360f);
 
-        return circleCenter + displacement;
+        // Update target direction for visualization
+        targetDirection = circleCenter + displacement;
+
+        return (circleCenter + displacement) - transform.position;
     }
 
-    private Vector3 SetAngle(Vector3 vector)
+    private Vector3 calculateAvoidenceForce(Vector3 velocity)
     {
-        float length = vector.magnitude;
-        return new Vector3(
-            Mathf.Cos(wanderAngle * Mathf.Deg2Rad) * length,
-            0,
-            Mathf.Sin(wanderAngle * Mathf.Deg2Rad) * length
-        );
+        velocity = Vector3.ClampMagnitude(velocity, this.maxSpeed);
+        Vector3 start = transform.position + transform.forward * maxSpeed;
+        Debug.DrawLine(start, start + transform.forward * this.lookAheadDistance, Color.red);
+        return Vector3.zero;
     }
 
-    private void Move(Vector3 direction)
+    private void Move(Vector3 velocity)
     {
-        Vector3 velocity = direction * (speed * Time.deltaTime);
         velocity = Vector3.ClampMagnitude(velocity, maxSpeed);
-
-        transform.position += velocity;
+        transform.position += velocity * Time.deltaTime;
     }
 
     private void RotateTowards(Vector3 direction)
@@ -82,8 +78,5 @@ public class LilGuyWander : MonoBehaviour
         Gizmos.color = Color.green;
         Vector3 circleCenter = transform.position + transform.forward * circleDistance;
         Gizmos.DrawWireSphere(circleCenter, circleRadius);
-
-        Gizmos.color = Color.red;
-        Gizmos.DrawLine(transform.position, transform.position + targetDirection);
     }
 }
