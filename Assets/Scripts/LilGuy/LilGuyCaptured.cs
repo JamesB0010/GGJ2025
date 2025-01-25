@@ -6,6 +6,7 @@ using UnityEngine;
 public class LilGuyCaptured : MonoBehaviour
 {
     [SerializeField] Transform visualTransform;
+    [SerializeField] Animator bodyAnimator;
     [SerializeField] private float rotationSpeed;
     [SerializeField] private float upwardSpeed;
 
@@ -14,6 +15,7 @@ public class LilGuyCaptured : MonoBehaviour
     public void Enter(State state)
     {
         this.rotationDirection = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized; 
+        bodyAnimator.enabled = false;
     }
     public void Behave(State state)
     {

@@ -38,7 +38,9 @@ public class CatchableAgent : MonoBehaviour
     void GetCaptured()
     {
         FSMMonoComponent runner = GetComponent<FSMMonoComponent>();
-        runner.TransitionActiveState(1);
+        if(runner){
+            runner.TransitionActiveState(1);
+        }
     }
 
     private void SetSlipMatIndex()
