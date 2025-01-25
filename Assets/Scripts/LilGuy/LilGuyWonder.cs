@@ -1,7 +1,8 @@
 using System;
+using EvolveGames;
 using UnityEngine;
 
-public class LilGuyWander : MonoBehaviour
+public class LilGuyWander : MonoBehaviour, I_TransitionEvaluator
 {
     [Header("Wander Settings")]
     [SerializeField] private float maxSpeed = 5f;
@@ -9,6 +10,9 @@ public class LilGuyWander : MonoBehaviour
     [SerializeField] private float circleRadius = 1f;
     [SerializeField] private float angleChange = 30f;
     [SerializeField] private float lookAheadDistance;
+    [SerializeField] private float avoidenceStrength;
+    [SerializeField] private float playerDetectionRange;
+    private LilGuySharedData sharedData;
 
     private Vector3 targetDirection;
     private float wanderAngle;
@@ -53,8 +57,17 @@ public class LilGuyWander : MonoBehaviour
     {
         velocity = Vector3.ClampMagnitude(velocity, this.maxSpeed);
         Vector3 start = transform.position + transform.forward * maxSpeed;
-        Debug.DrawLine(start, start + transform.forward * this.lookAheadDistance, Color.red);
-        return Vector3.zero;
+        Debug.DrawLine(transform.position, start + transform.forward * this.lookAheadDistance, Color.red);
+        Vector3 avoidenceForce = Vector3.zero;
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, transform.forward, out hit, this.lookAheadDistance))
+        {
+            avoidenceForce = Vector3.Reflect(transform.forward, hit.normal);
+            avoidenceForce.Normalize();
+            avoidenceForce *= this.avoidenceStrength;
+        }
+
+        return avoidenceForce;
     }
 
     private void Move(Vector3 velocity)
@@ -78,5 +91,10 @@ public class LilGuyWander : MonoBehaviour
         Gizmos.color = Color.green;
         Vector3 circleCenter = transform.position + transform.forward * circleDistance;
         Gizmos.DrawWireSphere(circleCenter, circleRadius);
+    }
+
+    public bool EvaluateTransition(int connectionIndex)
+    {
+        return Vector3.Distance(transform.position, this.sharedData.Player.position) < this.playerDetectionRange;
     }
 }
