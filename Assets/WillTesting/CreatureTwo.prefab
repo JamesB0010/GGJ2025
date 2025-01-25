@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 5112367017022674934}
   m_Layer: 0
   m_Name: CreatureTwo
-  m_TagString: Untagged
+  m_TagString: CreatureTwo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -147,6 +147,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cd94d7e616c4a048b77c5d874b97f6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  data:
+    id: 2
+    name: Green
+    image: {fileID: 21300000, guid: c35597c3d7b4fb14980272e979b03dc1, type: 3}
+    prefab: {fileID: 6316846827985578370}
 --- !u!65 &5112367017022674934
 BoxCollider:
   m_ObjectHideFlags: 0
