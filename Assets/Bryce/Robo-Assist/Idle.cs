@@ -23,8 +23,12 @@ public class Idle : MonoBehaviour, I_TransitionEvaluator
 
     public void Behave(State state)
     {
+        if (isCollecting.GetValue())
+        {
+            state.Transition(1);
+        }
         // we want to only do this if we are a certain range from the player
-        if (Vector3.Distance(Player.transform.position, this.transform.position) < 5 && isCollecting.GetValue())
+        if (Vector3.Distance(Player.transform.position, this.transform.position) < 5)
         {
             IdleMoveTimer -= Time.deltaTime;
             // get a direction
