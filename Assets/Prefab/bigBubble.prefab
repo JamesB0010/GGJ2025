@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6713299313366143165}
   - component: {fileID: 1568861146636081771}
   m_Layer: 0
-  m_Name: bubble
+  m_Name: bigBubble
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

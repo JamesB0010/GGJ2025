@@ -17,7 +17,7 @@ public class BubbleGun : MonoBehaviour
     [SerializeField] GameObject bubbleProjectilePrefab; // generic prefab reference for instantiation purposes
     [SerializeField] SoapBubble currentBubble; // This is the one that gets instantiated and fired during a charge shot
     [SerializeField] float sizeIncreaseRate; // how much does the bubble increase in size while being charged. In Scale Units per Second
-    [SerializeField] GameObject lightAttackPrefab;
+    [SerializeField] ParticleSystem lightAttackPS;
 
     [Header("Ammo")]
     [SerializeField] float maxFuel;
@@ -91,7 +91,7 @@ public class BubbleGun : MonoBehaviour
 
     private void FireLightShot()
     {
-        Debug.Log("TODO Fired a Light Shot");
+        lightAttackPS.Play();
     }
 
     private void FireChargeShot(GameObject bubble)
@@ -100,7 +100,6 @@ public class BubbleGun : MonoBehaviour
         Ray aimRay = playerCam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
         if(Physics.Raycast(aimRay, out RaycastHit hit, Mathf.Infinity)){
             Vector3 aimPoint = hit.point;
-            Debug.DrawLine(currentBubble.transform.position, hit.point, Color.red, 5f);
             currentBubble.transform.LookAt(aimPoint);
         }
         currentBubble.OnGunRelease();
