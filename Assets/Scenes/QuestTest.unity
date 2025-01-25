@@ -246,16 +246,35 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6743635446665412623, guid: e8c3d76127590114384587011f5166b2,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6743635446665412623, guid: e8c3d76127590114384587011f5166b2,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8564853068247438599, guid: e8c3d76127590114384587011f5166b2,
         type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 4582019823524865576}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8745889326511309382, guid: e8c3d76127590114384587011f5166b2, type: 3}
+    - {fileID: 697238250093931952, guid: e8c3d76127590114384587011f5166b2, type: 3}
+    - {fileID: 8718651801716058719, guid: e8c3d76127590114384587011f5166b2, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8c3d76127590114384587011f5166b2, type: 3}
+--- !u!224 &45175902 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2380887087301507321, guid: e8c3d76127590114384587011f5166b2,
+    type: 3}
+  m_PrefabInstance: {fileID: 18554750}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &693698732
 GameObject:
   m_ObjectHideFlags: 0
@@ -372,6 +391,7 @@ GameObject:
   m_Component:
   - component: {fileID: 973479715}
   - component: {fileID: 973479714}
+  - component: {fileID: 973479716}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -456,6 +476,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &973479716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 973479713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!1 &1433935722
 GameObject:
   m_ObjectHideFlags: 0
@@ -555,14 +598,81 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3634523856162787420, guid: 2b58401a79ccf214a891fd0069474e8a,
         type: 3}
-      propertyPath: numberOfCreatures
-      value: 7
+      propertyPath: spawnCount
+      value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3634523856162787420, guid: 2b58401a79ccf214a891fd0069474e8a,
+        type: 3}
+      propertyPath: paperContent
+      value: 
+      objectReference: {fileID: 45175902}
+    - target: {fileID: 3634523856162787420, guid: 2b58401a79ccf214a891fd0069474e8a,
+        type: 3}
+      propertyPath: numberOfCreatures
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3634523856162787420, guid: 2b58401a79ccf214a891fd0069474e8a,
+        type: 3}
+      propertyPath: creatureEntryPrefab
+      value: 
+      objectReference: {fileID: 8008983546287028365, guid: 7941b61adb5e01a40b4adc047715f494,
+        type: 3}
+    - target: {fileID: 3634523856162787420, guid: 2b58401a79ccf214a891fd0069474e8a,
+        type: 3}
+      propertyPath: creaturesList.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3634523856162787420, guid: 2b58401a79ccf214a891fd0069474e8a,
+        type: 3}
+      propertyPath: creaturesTest.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3634523856162787420, guid: 2b58401a79ccf214a891fd0069474e8a,
+        type: 3}
+      propertyPath: creaturePrefabs.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3634523856162787420, guid: 2b58401a79ccf214a891fd0069474e8a,
+        type: 3}
+      propertyPath: creaturesList.Array.data[0]
+      value: 
+      objectReference: {fileID: 1803867343166383179, guid: d9a7461d1e831c1458f1c2789b32b439,
+        type: 3}
+    - target: {fileID: 3634523856162787420, guid: 2b58401a79ccf214a891fd0069474e8a,
+        type: 3}
+      propertyPath: creaturesList.Array.data[1]
+      value: 
+      objectReference: {fileID: -6709025687652408628, guid: 6072eae00d91bbc49a19919fa105c761,
+        type: 3}
+    - target: {fileID: 3634523856162787420, guid: 2b58401a79ccf214a891fd0069474e8a,
+        type: 3}
+      propertyPath: creaturesList.Array.data[2]
+      value: 
+      objectReference: {fileID: 4354385238988624550, guid: 4416b55b2b373e44cb13001cd6b37654,
+        type: 3}
     - target: {fileID: 3634523856162787420, guid: 2b58401a79ccf214a891fd0069474e8a,
         type: 3}
       propertyPath: featuredCreatures.Array.size
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 3634523856162787420, guid: 2b58401a79ccf214a891fd0069474e8a,
+        type: 3}
+      propertyPath: creaturePrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 1803867343166383179, guid: d9a7461d1e831c1458f1c2789b32b439,
+        type: 3}
+    - target: {fileID: 3634523856162787420, guid: 2b58401a79ccf214a891fd0069474e8a,
+        type: 3}
+      propertyPath: creaturePrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: -6709025687652408628, guid: 6072eae00d91bbc49a19919fa105c761,
+        type: 3}
+    - target: {fileID: 3634523856162787420, guid: 2b58401a79ccf214a891fd0069474e8a,
+        type: 3}
+      propertyPath: creaturePrefabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 4354385238988624550, guid: 4416b55b2b373e44cb13001cd6b37654,
+        type: 3}
     - target: {fileID: 3634523856162787420, guid: 2b58401a79ccf214a891fd0069474e8a,
         type: 3}
       propertyPath: featuredCreatures.Array.data[0]
@@ -581,6 +691,131 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7380107874175922707, guid: 4416b55b2b373e44cb13001cd6b37654,
         type: 3}
+    - target: {fileID: 3634523856162787420, guid: 2b58401a79ccf214a891fd0069474e8a,
+        type: 3}
+      propertyPath: featuredCreatures.Array.data[3]
+      value: 
+      objectReference: {fileID: 7380107874175922707, guid: 4416b55b2b373e44cb13001cd6b37654,
+        type: 3}
+    - target: {fileID: 3634523856162787420, guid: 2b58401a79ccf214a891fd0069474e8a,
+        type: 3}
+      propertyPath: featuredCreatures.Array.data[4]
+      value: 
+      objectReference: {fileID: 7380107874175922707, guid: 4416b55b2b373e44cb13001cd6b37654,
+        type: 3}
+    - target: {fileID: 3634523856162787420, guid: 2b58401a79ccf214a891fd0069474e8a,
+        type: 3}
+      propertyPath: creaturesList.Array.data[0].Name
+      value: Fleeb
+      objectReference: {fileID: 0}
+    - target: {fileID: 3634523856162787420, guid: 2b58401a79ccf214a891fd0069474e8a,
+        type: 3}
+      propertyPath: creaturesList.Array.data[0].name
+      value: Florb
+      objectReference: {fileID: 0}
+    - target: {fileID: 3634523856162787420, guid: 2b58401a79ccf214a891fd0069474e8a,
+        type: 3}
+      propertyPath: creaturesList.Array.data[1].Name
+      value: Gorp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3634523856162787420, guid: 2b58401a79ccf214a891fd0069474e8a,
+        type: 3}
+      propertyPath: creaturesList.Array.data[1].name
+      value: Lorg
+      objectReference: {fileID: 0}
+    - target: {fileID: 3634523856162787420, guid: 2b58401a79ccf214a891fd0069474e8a,
+        type: 3}
+      propertyPath: creaturesList.Array.data[2].Name
+      value: Gunu
+      objectReference: {fileID: 0}
+    - target: {fileID: 3634523856162787420, guid: 2b58401a79ccf214a891fd0069474e8a,
+        type: 3}
+      propertyPath: creaturesList.Array.data[2].name
+      value: Gunu
+      objectReference: {fileID: 0}
+    - target: {fileID: 3634523856162787420, guid: 2b58401a79ccf214a891fd0069474e8a,
+        type: 3}
+      propertyPath: creaturesList.Array.data[3].name
+      value: Gunu
+      objectReference: {fileID: 0}
+    - target: {fileID: 3634523856162787420, guid: 2b58401a79ccf214a891fd0069474e8a,
+        type: 3}
+      propertyPath: creaturesTest.Array.data[0].Name
+      value: Florb
+      objectReference: {fileID: 0}
+    - target: {fileID: 3634523856162787420, guid: 2b58401a79ccf214a891fd0069474e8a,
+        type: 3}
+      propertyPath: creaturesTest.Array.data[1].Name
+      value: Flebe
+      objectReference: {fileID: 0}
+    - target: {fileID: 3634523856162787420, guid: 2b58401a79ccf214a891fd0069474e8a,
+        type: 3}
+      propertyPath: creaturesTest.Array.data[2].Name
+      value: Gunu
+      objectReference: {fileID: 0}
+    - target: {fileID: 3634523856162787420, guid: 2b58401a79ccf214a891fd0069474e8a,
+        type: 3}
+      propertyPath: creaturesList.Array.data[0].creatureImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 64cb897145a8d2a4fa8adcb77c326c90,
+        type: 3}
+    - target: {fileID: 3634523856162787420, guid: 2b58401a79ccf214a891fd0069474e8a,
+        type: 3}
+      propertyPath: creaturesList.Array.data[1].creatureImage
+      value: 
+      objectReference: {fileID: 21300000, guid: c35597c3d7b4fb14980272e979b03dc1,
+        type: 3}
+    - target: {fileID: 3634523856162787420, guid: 2b58401a79ccf214a891fd0069474e8a,
+        type: 3}
+      propertyPath: creaturesList.Array.data[2].creatureImage
+      value: 
+      objectReference: {fileID: 21300000, guid: ea942697bf234a34fa57b215b785d939,
+        type: 3}
+    - target: {fileID: 3634523856162787420, guid: 2b58401a79ccf214a891fd0069474e8a,
+        type: 3}
+      propertyPath: creaturesList.Array.data[3].creatureImage
+      value: 
+      objectReference: {fileID: 21300000, guid: ea942697bf234a34fa57b215b785d939,
+        type: 3}
+    - target: {fileID: 3634523856162787420, guid: 2b58401a79ccf214a891fd0069474e8a,
+        type: 3}
+      propertyPath: creaturesList.Array.data[0].creaturePrefab
+      value: 
+      objectReference: {fileID: 4788296764807634691, guid: d9a7461d1e831c1458f1c2789b32b439,
+        type: 3}
+    - target: {fileID: 3634523856162787420, guid: 2b58401a79ccf214a891fd0069474e8a,
+        type: 3}
+      propertyPath: creaturesList.Array.data[1].creaturePrefab
+      value: 
+      objectReference: {fileID: 6316846827985578370, guid: 6072eae00d91bbc49a19919fa105c761,
+        type: 3}
+    - target: {fileID: 3634523856162787420, guid: 2b58401a79ccf214a891fd0069474e8a,
+        type: 3}
+      propertyPath: creaturesList.Array.data[2].creaturePrefab
+      value: 
+      objectReference: {fileID: 7380107874175922707, guid: 4416b55b2b373e44cb13001cd6b37654,
+        type: 3}
+    - target: {fileID: 3634523856162787420, guid: 2b58401a79ccf214a891fd0069474e8a,
+        type: 3}
+      propertyPath: creaturesList.Array.data[3].creaturePrefab
+      value: 
+      objectReference: {fileID: 7380107874175922707, guid: 4416b55b2b373e44cb13001cd6b37654,
+        type: 3}
+    - target: {fileID: 3634523856162787420, guid: 2b58401a79ccf214a891fd0069474e8a,
+        type: 3}
+      propertyPath: creaturesTest.Array.data[0].creaturePrefab
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3634523856162787420, guid: 2b58401a79ccf214a891fd0069474e8a,
+        type: 3}
+      propertyPath: creaturesTest.Array.data[1].creaturePrefab
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3634523856162787420, guid: 2b58401a79ccf214a891fd0069474e8a,
+        type: 3}
+      propertyPath: creaturesTest.Array.data[2].creaturePrefab
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4449027740729126019, guid: 2b58401a79ccf214a891fd0069474e8a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1818,6 +2053,7 @@ GameObject:
   - component: {fileID: 4582019823524865579}
   - component: {fileID: 4582019823524865577}
   - component: {fileID: 4582019823524865582}
+  - component: {fileID: 4582019823524865583}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -1835,7 +2071,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1980,6 +2216,50 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
+--- !u!114 &4582019823524865583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4582019823524865557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_AllowHDROutput: 1
+  m_UseScreenCoordOverride: 0
+  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
+  m_TaaSettings:
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
 --- !u!1 &4582019823736832656
 GameObject:
   m_ObjectHideFlags: 0
@@ -2041,6 +2321,7 @@ MonoBehaviour:
   Lookvertical: 0
   Lookhorizontal: 0
   WalkingValue: 0
+  isMoving: {fileID: 11400000, guid: 8fbd38c032a3fe741b89c78e4c253674, type: 2}
 --- !u!143 &4582019823736832662
 CharacterController:
   m_ObjectHideFlags: 0
