@@ -27,7 +27,6 @@ public class LilGuyWander : MonoBehaviour, I_TransitionEvaluator
 
     public void Behave(State state)
     {
-        Debug.Log("Wander");
         Vector3 velocity = this.CalculateWanderForce();
         velocity += this.calculateAvoidenceForce(velocity);
         this.Move(velocity);

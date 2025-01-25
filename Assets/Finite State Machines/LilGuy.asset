@@ -52,10 +52,23 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   stateConnections:
-    stateConnections: []
+    stateConnections:
+    - stateTo: {fileID: 8618638473977610625}
+      transitionHandleMethod: 3
+      SelectedTransitionConditionEvaluator: 0
+      AgentPrefab: {fileID: 0}
+      transitionConditions:
+      - rid: 8061473599240798596
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 8061473599240798596
+      type: {class: FloatTransitionCondition, ns: , asm: Assembly-CSharp}
+      data:
+        transitionHandledByAgent: 0
+        valueToTest: {fileID: 0}
+        comparisonOperator: {fileID: 0}
+        comparand: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -90,20 +103,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   guid: fc2c21f145ce86843b610f3b16a6ed38
   parent: {fileID: 11400000}
-  graphEditorPosition: {x: -3.2000122, y: 2.399994}
+  graphEditorPosition: {x: 9.399994, y: 20.630379}
   description: This state is the entry of the FSM. It has 1 connection and will automatically
     transition to that connection
   stateConnection:
-    stateTo: {fileID: -9182619619794712432}
+    stateTo: {fileID: 8616626906314292044}
     transitionHandleMethod: 0
     SelectedTransitionConditionEvaluator: 0
     AgentPrefab: {fileID: 0}
     transitionConditions:
-    - rid: 8061473599240798421
+    - rid: 8061473599240798593
   references:
     version: 2
     RefIds:
-    - rid: 8061473599240798421
+    - rid: 8061473599240798593
       type: {class: FloatTransitionCondition, ns: , asm: Assembly-CSharp}
       data:
         transitionHandledByAgent: 0
@@ -120,11 +133,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7562ecde526829a408eaf6ce111ec73d, type: 3}
-  m_Name: Move to wonder position
+  m_Name: Wander
   m_EditorClassIdentifier: 
   guid: e07b1330edcc70d498ff56eec608636a
   parent: {fileID: 11400000}
-  graphEditorPosition: {x: -32.00003, y: 280.00003}
+  graphEditorPosition: {x: -32.95997, y: 280.79993}
   description: A wonder position has been chose so the lil guy will wonder to it
   EnterStateEvent:
     m_PersistentCalls:
@@ -157,10 +170,23 @@ MonoBehaviour:
         type: 3}
       transitionConditions:
       - rid: 8061473599240798238
+    - stateTo: {fileID: -9182619619794712432}
+      transitionHandleMethod: 3
+      SelectedTransitionConditionEvaluator: 0
+      AgentPrefab: {fileID: 0}
+      transitionConditions:
+      - rid: 8061473599240798594
   references:
     version: 2
     RefIds:
     - rid: 8061473599240798238
+      type: {class: FloatTransitionCondition, ns: , asm: Assembly-CSharp}
+      data:
+        transitionHandledByAgent: 0
+        valueToTest: {fileID: 0}
+        comparisonOperator: {fileID: 0}
+        comparand: 0
+    - rid: 8061473599240798594
       type: {class: FloatTransitionCondition, ns: , asm: Assembly-CSharp}
       data:
         transitionHandledByAgent: 0
@@ -181,7 +207,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   guid: f64a258027d56424abb837fcad4288fe
   parent: {fileID: 11400000}
-  graphEditorPosition: {x: 288, y: 296.8}
+  graphEditorPosition: {x: 293.5666, y: 288.8}
   description: 
   EnterStateEvent:
     m_PersistentCalls:
@@ -214,10 +240,23 @@ MonoBehaviour:
         type: 3}
       transitionConditions:
       - rid: 8061473599240798393
+    - stateTo: {fileID: -9182619619794712432}
+      transitionHandleMethod: 3
+      SelectedTransitionConditionEvaluator: 0
+      AgentPrefab: {fileID: 0}
+      transitionConditions:
+      - rid: 8061473599240798595
   references:
     version: 2
     RefIds:
     - rid: 8061473599240798393
+      type: {class: FloatTransitionCondition, ns: , asm: Assembly-CSharp}
+      data:
+        transitionHandledByAgent: 0
+        valueToTest: {fileID: 0}
+        comparisonOperator: {fileID: 0}
+        comparand: 0
+    - rid: 8061473599240798595
       type: {class: FloatTransitionCondition, ns: , asm: Assembly-CSharp}
       data:
         transitionHandledByAgent: 0
