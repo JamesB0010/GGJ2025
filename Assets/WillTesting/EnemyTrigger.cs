@@ -26,7 +26,7 @@ public class EnemyTrigger : MonoBehaviour
     {
         if (other.gameObject.CompareTag("GameController"))
         {
-            questScript.UISubtractAtID(data.id-1);
+            questScript.UISubtractAtID(data.id);
             Destroy(this.gameObject);
         }
     }
