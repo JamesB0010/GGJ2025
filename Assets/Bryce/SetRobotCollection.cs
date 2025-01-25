@@ -6,8 +6,10 @@ using UnityEngine.Events;
 
 public class SetRobotCollection : MonoBehaviour
 {
-    ItemChange ItemSelect;
+    [SerializeField] ItemChange ItemSelect;
     [SerializeField] Camera Camera;
+    [SerializeField] BoolReference isCollecting;
+
     private void Start()
     {
         ItemSelect = GetComponentInParent<PlayerController>().GetComponent<ItemChange>();
@@ -18,7 +20,7 @@ public class SetRobotCollection : MonoBehaviour
         Ray ray = Camera.ScreenPointToRay(new Vector2(Screen.width / 2, Screen.height / 2));
         RaycastHit hit;
 
-        if (ItemSelect.ItemIdInt == 1)
+        if(ItemSelect.ItemIdInt == 1)
         {
             if (Input.GetMouseButtonDown(0))
             {
@@ -30,6 +32,7 @@ public class SetRobotCollection : MonoBehaviour
                         if (agent != null)
                         {
                             GetTarget?.Invoke(hit.collider.gameObject);
+                            isCollecting.SetValue(true);
                         }
                     }
                 }
