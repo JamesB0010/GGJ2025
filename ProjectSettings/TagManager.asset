@@ -6,7 +6,7 @@ TagManager:
   tags:
   - Ladder
   - BigBubble
-  - Obstacle
+  - Capturable
   layers:
   - Default
   - TransparentFX
