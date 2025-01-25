@@ -2,14 +2,23 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
+[System.Serializable]
+public class Creature
+{
+    public string Name;
+    public GameObject creaturePrefab;
+}
+
 public class QuestManager : MonoBehaviour
 {
     [Header("Creatures")]
-    public GameObject[] featuredCreatures;
+    public List<Creature> creaturesList = new List<Creature>();
+    //public GameObject[] featuredCreatures;
     public int numberOfCreatures = 3;
     private GameObject[] creatures;
     private BoxCollider spawnArea;
@@ -19,6 +28,10 @@ public class QuestManager : MonoBehaviour
     public int requiredCreatures;
     public int currentCreatures = 0;
     private bool questComplete;
+
+    [Header("UI")]
+    public Transform paperContent;
+    public GameObject creatureEntryPrefab;
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +47,9 @@ public class QuestManager : MonoBehaviour
 
         // Used to spawn in creatures
         CreatureSpawn();
+
+        // Create the list with initial creatures
+        UpdateCreatureListUI();
     }
 
     // Update is called once per frame
@@ -65,9 +81,13 @@ public class QuestManager : MonoBehaviour
         }
     }
 
+    // Call when creatures are collected
     public void CreatureCollected()
     {
         currentCreatures++;
+
+        // Only update on collection
+        UpdateCreatureListUI();
     }
 
     private void CreatureSpawn()
@@ -77,8 +97,9 @@ public class QuestManager : MonoBehaviour
         for (int i = 0; i < numberOfCreatures; i++)
         {
             // Go through creatures that should be in the level and randomly adding them
-            int creatureToAdd = Random.Range(0, featuredCreatures.Length);
-            GameObject creaturePrefab = featuredCreatures[creatureToAdd];
+            int creatureToAdd = Random.Range(0, creaturesList.Count);
+            Creature currentCreature = creaturesList[creatureToAdd];
+            GameObject creaturePrefab = currentCreature.creaturePrefab;
 
             // Spawn creatures in area of box collider, this size is set in the inspector
             var spawnBounds = spawnArea.bounds;
@@ -87,7 +108,7 @@ public class QuestManager : MonoBehaviour
             Vector3 spawnPos = new Vector3(areaX, transform.position.y, areaZ);
 
             // Add creature to scene
-            GameObject newCreature = Instantiate(featuredCreatures[creatureToAdd], spawnPos, Quaternion.identity);
+            GameObject newCreature = Instantiate(currentCreature.creaturePrefab, spawnPos, Quaternion.identity);
 
             // Add creature to creatures array
             creatures[i] = newCreature;
@@ -118,5 +139,27 @@ public class QuestManager : MonoBehaviour
             }
         }
         return 0;
+    }
+
+    private void UpdateCreatureListUI()
+    {
+        // Remove previous entries
+        foreach (Transform child in paperContent)
+        {
+            Destroy(child.gameObject);
+        }
+
+        // Add each creature to the ui list
+        foreach (var creature in creaturesList)
+        {
+            GameObject creatureEntry = Instantiate(creatureEntryPrefab, paperContent);
+
+            TMP_Text creatureNameText = creatureEntry.transform.Find("Name").GetComponent<TMP_Text>();
+
+            if (creatureNameText != null)
+            {
+                creatureNameText.text = creature.Name;
+            }
+        }
     }
 }
