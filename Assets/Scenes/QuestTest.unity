@@ -598,6 +598,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3634523856162787420, guid: 2b58401a79ccf214a891fd0069474e8a,
         type: 3}
+      propertyPath: spawnCount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3634523856162787420, guid: 2b58401a79ccf214a891fd0069474e8a,
+        type: 3}
       propertyPath: paperContent
       value: 
       objectReference: {fileID: 45175902}
@@ -624,9 +629,50 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3634523856162787420, guid: 2b58401a79ccf214a891fd0069474e8a,
         type: 3}
+      propertyPath: creaturePrefabs.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3634523856162787420, guid: 2b58401a79ccf214a891fd0069474e8a,
+        type: 3}
+      propertyPath: creaturesList.Array.data[0]
+      value: 
+      objectReference: {fileID: 1803867343166383179, guid: d9a7461d1e831c1458f1c2789b32b439,
+        type: 3}
+    - target: {fileID: 3634523856162787420, guid: 2b58401a79ccf214a891fd0069474e8a,
+        type: 3}
+      propertyPath: creaturesList.Array.data[1]
+      value: 
+      objectReference: {fileID: -6709025687652408628, guid: 6072eae00d91bbc49a19919fa105c761,
+        type: 3}
+    - target: {fileID: 3634523856162787420, guid: 2b58401a79ccf214a891fd0069474e8a,
+        type: 3}
+      propertyPath: creaturesList.Array.data[2]
+      value: 
+      objectReference: {fileID: 4354385238988624550, guid: 4416b55b2b373e44cb13001cd6b37654,
+        type: 3}
+    - target: {fileID: 3634523856162787420, guid: 2b58401a79ccf214a891fd0069474e8a,
+        type: 3}
       propertyPath: featuredCreatures.Array.size
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 3634523856162787420, guid: 2b58401a79ccf214a891fd0069474e8a,
+        type: 3}
+      propertyPath: creaturePrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 1803867343166383179, guid: d9a7461d1e831c1458f1c2789b32b439,
+        type: 3}
+    - target: {fileID: 3634523856162787420, guid: 2b58401a79ccf214a891fd0069474e8a,
+        type: 3}
+      propertyPath: creaturePrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: -6709025687652408628, guid: 6072eae00d91bbc49a19919fa105c761,
+        type: 3}
+    - target: {fileID: 3634523856162787420, guid: 2b58401a79ccf214a891fd0069474e8a,
+        type: 3}
+      propertyPath: creaturePrefabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 4354385238988624550, guid: 4416b55b2b373e44cb13001cd6b37654,
+        type: 3}
     - target: {fileID: 3634523856162787420, guid: 2b58401a79ccf214a891fd0069474e8a,
         type: 3}
       propertyPath: featuredCreatures.Array.data[0]
@@ -689,6 +735,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3634523856162787420, guid: 2b58401a79ccf214a891fd0069474e8a,
         type: 3}
+      propertyPath: creaturesList.Array.data[3].name
+      value: Gunu
+      objectReference: {fileID: 0}
+    - target: {fileID: 3634523856162787420, guid: 2b58401a79ccf214a891fd0069474e8a,
+        type: 3}
       propertyPath: creaturesTest.Array.data[0].Name
       value: Florb
       objectReference: {fileID: 0}
@@ -706,17 +757,26 @@ PrefabInstance:
         type: 3}
       propertyPath: creaturesList.Array.data[0].creatureImage
       value: 
-      objectReference: {fileID: 2800000, guid: 64cb897145a8d2a4fa8adcb77c326c90, type: 3}
+      objectReference: {fileID: 21300000, guid: 64cb897145a8d2a4fa8adcb77c326c90,
+        type: 3}
     - target: {fileID: 3634523856162787420, guid: 2b58401a79ccf214a891fd0069474e8a,
         type: 3}
       propertyPath: creaturesList.Array.data[1].creatureImage
       value: 
-      objectReference: {fileID: 2800000, guid: ea942697bf234a34fa57b215b785d939, type: 3}
+      objectReference: {fileID: 21300000, guid: c35597c3d7b4fb14980272e979b03dc1,
+        type: 3}
     - target: {fileID: 3634523856162787420, guid: 2b58401a79ccf214a891fd0069474e8a,
         type: 3}
       propertyPath: creaturesList.Array.data[2].creatureImage
       value: 
-      objectReference: {fileID: 2800000, guid: c35597c3d7b4fb14980272e979b03dc1, type: 3}
+      objectReference: {fileID: 21300000, guid: ea942697bf234a34fa57b215b785d939,
+        type: 3}
+    - target: {fileID: 3634523856162787420, guid: 2b58401a79ccf214a891fd0069474e8a,
+        type: 3}
+      propertyPath: creaturesList.Array.data[3].creatureImage
+      value: 
+      objectReference: {fileID: 21300000, guid: ea942697bf234a34fa57b215b785d939,
+        type: 3}
     - target: {fileID: 3634523856162787420, guid: 2b58401a79ccf214a891fd0069474e8a,
         type: 3}
       propertyPath: creaturesList.Array.data[0].creaturePrefab
@@ -732,6 +792,12 @@ PrefabInstance:
     - target: {fileID: 3634523856162787420, guid: 2b58401a79ccf214a891fd0069474e8a,
         type: 3}
       propertyPath: creaturesList.Array.data[2].creaturePrefab
+      value: 
+      objectReference: {fileID: 7380107874175922707, guid: 4416b55b2b373e44cb13001cd6b37654,
+        type: 3}
+    - target: {fileID: 3634523856162787420, guid: 2b58401a79ccf214a891fd0069474e8a,
+        type: 3}
+      propertyPath: creaturesList.Array.data[3].creaturePrefab
       value: 
       objectReference: {fileID: 7380107874175922707, guid: 4416b55b2b373e44cb13001cd6b37654,
         type: 3}
@@ -2005,7 +2071,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
