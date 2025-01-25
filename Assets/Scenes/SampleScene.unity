@@ -2398,7 +2398,7 @@ PrefabInstance:
     - target: {fileID: 2832084243256749747, guid: 168c3ff3b03a63e409857d3dcfecc7b3,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.545885
+      value: -8.16
       objectReference: {fileID: 0}
     - target: {fileID: 2832084243256749747, guid: 168c3ff3b03a63e409857d3dcfecc7b3,
         type: 3}
@@ -2408,7 +2408,7 @@ PrefabInstance:
     - target: {fileID: 2832084243256749747, guid: 168c3ff3b03a63e409857d3dcfecc7b3,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.2064257
+      value: -7.19
       objectReference: {fileID: 0}
     - target: {fileID: 2832084243256749747, guid: 168c3ff3b03a63e409857d3dcfecc7b3,
         type: 3}
@@ -2450,6 +2450,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: big boy
       objectReference: {fileID: 0}
+    - target: {fileID: 8977223234578241851, guid: 168c3ff3b03a63e409857d3dcfecc7b3,
+        type: 3}
+      propertyPath: m_Materials.Array.data[16]
+      value: 
+      objectReference: {fileID: 2100000, guid: 398fab37168e9c74c8e32252bae841e8, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

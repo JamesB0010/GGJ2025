@@ -27,6 +27,7 @@ public class LilGuyWander : MonoBehaviour, I_TransitionEvaluator
 
     public void Behave(State state)
     {
+        Debug.Log("Wander");
         Vector3 velocity = this.CalculateWanderForce();
         velocity += this.calculateAvoidenceForce(velocity);
         this.Move(velocity);
@@ -81,7 +82,7 @@ public class LilGuyWander : MonoBehaviour, I_TransitionEvaluator
     {
         if (direction.sqrMagnitude > 0.01f)
         {
-            Quaternion targetRotation = Quaternion.LookRotation(direction, Vector3.up);
+            Quaternion targetRotation = Quaternion.LookRotation(direction + new Vector3(90,0,0), Vector3.up);
             transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * 5f);
         }
     }
