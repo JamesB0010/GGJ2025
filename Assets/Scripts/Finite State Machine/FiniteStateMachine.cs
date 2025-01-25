@@ -5,6 +5,7 @@ using System.Linq;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 [CreateAssetMenu]
 public class FiniteStateMachine : ScriptableObject
@@ -19,13 +20,18 @@ public class FiniteStateMachine : ScriptableObject
         get => this.activeState;
         set
         {
-            State newState = value;
-            if (this.activeState != newState)
+            if (this.activeState != value)
             {
-                this.ChangeState(newState);
+                this.readyToChangeState = true;
+                this.newStateToChangeTo = value;
             }
         }
     }
+
+    [FormerlySerializedAs("ReadyToChangeState")] public bool readyToChangeState;
+    public State newStateToChangeTo;
+    
+    
     [SerializeField] private EntryState entryState = null;
 
     [SerializeField] private List<FSMStateBase> states = new();
@@ -133,6 +139,10 @@ public class FiniteStateMachine : ScriptableObject
 
     public void OnUpdate()
     {
+        if (this.readyToChangeState)
+        {
+            this.ChangeState(this.newStateToChangeTo);
+        }
         State newState = activeState.TestTransitions();
         if (this.activeState != newState)
         {
@@ -145,12 +155,13 @@ public class FiniteStateMachine : ScriptableObject
 
     private void ChangeState(State newState)
     {
+        this.readyToChangeState = false;
+        activeState = newState;
         //Start
         this.stateChanged?.Invoke(this.activeState, newState);
 
         this.activeState.ExitState();
         newState.EnterState();
-        activeState = newState;
     }
 
     public FiniteStateMachine Clone(GameObject owningObject)
