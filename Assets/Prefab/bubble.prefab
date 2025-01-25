@@ -121,5 +121,6 @@ MonoBehaviour:
   isInMovement: 0
   isFull: 0
   bubbleCollider: {fileID: 0}
-  forwardSpeed: 0
-  driftSpeed: 0
+  forwardSpeed: 2
+  driftSpeed: 0.2
+  verticalFloatSpeed: 0.1
