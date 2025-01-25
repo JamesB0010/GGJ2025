@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class FollowPlayer : MonoBehaviour, I_TransitionEvaluator
 {
@@ -10,9 +12,8 @@ public class FollowPlayer : MonoBehaviour, I_TransitionEvaluator
     [SerializeField] float StopDistance;
     [SerializeField] float AccepableMovementAngle;
 
-    private bool isMovingLocal;
-
     [SerializeField] BoolReference isMoving;
+    [SerializeField] BoolReference isCollecting;
 
     CharacterController controller;
 
@@ -28,30 +29,29 @@ public class FollowPlayer : MonoBehaviour, I_TransitionEvaluator
 
     public void Behave(State state)
     {
-        Vector3 direction = (Player.transform.position - transform.position).normalized;
-        float distanceToTarget = Vector3.Distance(transform.position, Player.transform.position);
+        if (isCollecting.GetValue())
+        {
+            state.Transition(1);
+        }
+        // we want to only do this if we are a certain range from the player
+        if (Vector3.Distance(Player.transform.position, this.transform.position) > 3 && !isCollecting.GetValue())
+        {
+            Vector3 direction = (Player.transform.position - transform.position).normalized;
+            float distanceToTarget = Vector3.Distance(transform.position, Player.transform.position);
 
-        float angleToTarget = Vector3.Angle(transform.forward, direction);
-        
-        if (angleToTarget > AccepableMovementAngle)
-        {
-            Quaternion targetRotation = Quaternion.LookRotation(direction);
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Rotation * Time.deltaTime);
-        }
-        else if (distanceToTarget > StopDistance)
-        {
-            transform.position += direction * Speed * Time.deltaTime;
-        }
+            float angleToTarget = Vector3.Angle(transform.forward, direction);
 
-        if (controller.velocity.magnitude > 0)
-        {
-            isMovingLocal = true;
+            if (angleToTarget > AccepableMovementAngle)
+            {
+                Quaternion targetRotation = Quaternion.LookRotation(direction);
+                transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Rotation * Time.deltaTime);
+            }
+            else if (distanceToTarget > StopDistance)
+            {
+                this.GetComponent<NavMeshAgent>().SetDestination(Player.transform.position);
+            }
         }
-        else
-        {
-            isMovingLocal = false;
-        }
-    }
+    } 
 
     public void ExitState(State state)
     {
@@ -60,9 +60,8 @@ public class FollowPlayer : MonoBehaviour, I_TransitionEvaluator
 
     public bool EvaluateTransition(int connectionIndex)
     {
-        if (!isMovingLocal)
+        if (!isMoving.GetValue())
         {
-            isMoving.SetValue(false);
             return true;
         }
         return false;
