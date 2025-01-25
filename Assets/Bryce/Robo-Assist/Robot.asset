@@ -43,15 +43,13 @@ MonoBehaviour:
     - stateTo: {fileID: -5551818321510390713}
       transitionHandleMethod: 2
       SelectedTransitionConditionEvaluator: 1
-      AgentPrefab: {fileID: 5931975180441892522, guid: 6776a5c6893e19b4596a7fd117c30420,
-        type: 3}
+      AgentPrefab: {fileID: 0}
       transitionConditions:
       - rid: 6112842128898129922
     - stateTo: {fileID: 1308565831893287894}
       transitionHandleMethod: 2
       SelectedTransitionConditionEvaluator: 1
-      AgentPrefab: {fileID: 5931975180441892522, guid: 6776a5c6893e19b4596a7fd117c30420,
-        type: 3}
+      AgentPrefab: {fileID: 0}
       transitionConditions:
       - rid: 6112842128898129923
   references:
@@ -140,15 +138,13 @@ MonoBehaviour:
     - stateTo: {fileID: 1308565831893287894}
       transitionHandleMethod: 2
       SelectedTransitionConditionEvaluator: 0
-      AgentPrefab: {fileID: 5931975180441892522, guid: 6776a5c6893e19b4596a7fd117c30420,
-        type: 3}
+      AgentPrefab: {fileID: 0}
       transitionConditions:
       - rid: 1485923461087363122
     - stateTo: {fileID: -9210791070343471647}
       transitionHandleMethod: 2
       SelectedTransitionConditionEvaluator: 0
-      AgentPrefab: {fileID: 5931975180441892522, guid: 6776a5c6893e19b4596a7fd117c30420,
-        type: 3}
+      AgentPrefab: {fileID: 0}
       transitionConditions:
       - rid: 6112842128898129921
   references:
@@ -257,15 +253,13 @@ MonoBehaviour:
     - stateTo: {fileID: -5551818321510390713}
       transitionHandleMethod: 2
       SelectedTransitionConditionEvaluator: 2
-      AgentPrefab: {fileID: 5931975180441892522, guid: 6776a5c6893e19b4596a7fd117c30420,
-        type: 3}
+      AgentPrefab: {fileID: 0}
       transitionConditions:
       - rid: 8113285882412007840
     - stateTo: {fileID: -9210791070343471647}
       transitionHandleMethod: 2
       SelectedTransitionConditionEvaluator: 2
-      AgentPrefab: {fileID: 5931975180441892522, guid: 6776a5c6893e19b4596a7fd117c30420,
-        type: 3}
+      AgentPrefab: {fileID: 0}
       transitionConditions:
       - rid: 6112842128898129924
   references:
