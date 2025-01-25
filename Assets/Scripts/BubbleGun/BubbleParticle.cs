@@ -15,7 +15,6 @@ public class BubbleParticle : MonoBehaviour
     }
     private void OnParticleCollision(GameObject _hitObj)
     {
-        Debug.Log($"{_hitObj.name} was splashed");
         // TODO When animals are implemented, make them damp via this function.
         CatchableAgent agent;
         if(_hitObj.TryGetComponent<CatchableAgent>(out agent)){
