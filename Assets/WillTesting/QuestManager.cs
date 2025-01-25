@@ -13,7 +13,7 @@ public class QuestManager : MonoBehaviour
     public int numberOfCreatures = 3;
     private GameObject[] creatures;
     private BoxCollider spawnArea;
-    private int[] creatureCount;
+    private Dictionary<GameObject, int> creatureDictionary;
 
     [Header("Questing")]
     public int requiredCreatures;
@@ -29,8 +29,8 @@ public class QuestManager : MonoBehaviour
         // Get the box collider on gameobject
         spawnArea = GetComponent<BoxCollider>();
 
-        // Set creatureCount to array size
-        creatureCount = new int[featuredCreatures.Length];
+        // Init Dic
+        creatureDictionary = new Dictionary<GameObject, int>();
 
         // Used to spawn in creatures
         CreatureSpawn();
@@ -41,6 +41,19 @@ public class QuestManager : MonoBehaviour
     {
         // Running the Quest
         CurrentQuest();
+
+        /*
+        foreach (var key in creatureDictionary.Keys)
+        {
+            foreach (var value in creatureDictionary.Values)
+            {
+                Debug.Log("Creature: " + key + "Number In Scene: " + value);
+            }
+        }
+        */
+
+        // Testing specific creature tracking
+        //GetCreatureCount(featuredCreatures[0]);
     }
 
     private void CurrentQuest()
@@ -65,6 +78,7 @@ public class QuestManager : MonoBehaviour
         {
             // Go through creatures that should be in the level and randomly adding them
             int creatureToAdd = Random.Range(0, featuredCreatures.Length);
+            GameObject creaturePrefab = featuredCreatures[creatureToAdd];
 
             // Spawn creatures in area of box collider, this size is set in the inspector
             var spawnBounds = spawnArea.bounds;
@@ -78,17 +92,30 @@ public class QuestManager : MonoBehaviour
             // Add creature to creatures array
             creatures[i] = newCreature;
 
-            // Add to the count for the spawned creature
-            creatureCount[creatureToAdd]++;
+            // Add creature to dictionary for tracking
+            if (creatureDictionary.ContainsKey(creaturePrefab))
+            {
+                creatureDictionary[creaturePrefab]++;
+            }
+            else
+            {
+                creatureDictionary.TryAdd(creaturePrefab, 1);
+            }
         }
     }
 
     // Get the creature count, used for tracking number of certain creatures in the scene
-    private int GetCreatureCount(int index)
+    private int GetCreatureCount(GameObject creaturePrefabCheck)
     {
-        if (index >= 0 && index < creatures.Length)
+        // Go through each of the values
+        foreach (var value in creatureDictionary.Values)
         {
-            return creatureCount[index];
+            // Only print and get the value of chosen creature
+            if (creatureDictionary.ContainsKey(creaturePrefabCheck))
+            {
+                Debug.Log(value);
+                return value;
+            }
         }
         return 0;
     }
