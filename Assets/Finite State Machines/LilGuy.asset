@@ -93,16 +93,16 @@ MonoBehaviour:
   description: This state is the entry of the FSM. It has 1 connection and will automatically
     transition to that connection
   stateConnection:
-    stateTo: {fileID: 8616626906314292044}
+    stateTo: {fileID: 2203131038030077341}
     transitionHandleMethod: 0
     SelectedTransitionConditionEvaluator: 0
     AgentPrefab: {fileID: 0}
     transitionConditions:
-    - rid: 8061473586489589766
+    - rid: 8061473587761512485
   references:
     version: 2
     RefIds:
-    - rid: 8061473586489589766
+    - rid: 8061473587761512485
       type: {class: FloatTransitionCondition, ns: , asm: Assembly-CSharp}
       data:
         transitionHandledByAgent: 0
