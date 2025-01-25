@@ -21,6 +21,7 @@ public class LilGuyRunAway : MonoBehaviour, I_TransitionEvaluator
 
     public void Behave(State state)
     {
+        Debug.Log("Run Away");
         Vector3 velocity = this.CalculateRunAwayForce();
         velocity += this.lilGuyWander.calculateAvoidenceForce(velocity);
         this.lilGuyWander.Move(velocity);
