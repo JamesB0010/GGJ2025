@@ -18,63 +18,6 @@ MonoBehaviour:
   states:
   - {fileID: 3379061426255227095}
   - {fileID: 8616626906314292044}
-  - {fileID: 2203131038030077341}
---- !u!114 &2203131038030077341
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7562ecde526829a408eaf6ce111ec73d, type: 3}
-  m_Name: ChooseNewWonderPosition
-  m_EditorClassIdentifier: 
-  guid: a76f0f2c5927e804ba2a5c0f7cba40e3
-  parent: {fileID: 11400000}
-  graphEditorPosition: {x: 323.19995, y: 288}
-  description: The lil guy chooses a new wonder position
-  EnterStateEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1522197694694087466, guid: 8a5dca819b3c32644b9672ab9c8a0cee,
-          type: 3}
-        m_TargetAssemblyTypeName: LilGuyChooseNewWonderPos, Assembly-CSharp
-        m_MethodName: EnterState
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  BehaveEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  ExitStateEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  stateConnections:
-    stateConnections:
-    - stateTo: {fileID: 8616626906314292044}
-      transitionHandleMethod: 3
-      SelectedTransitionConditionEvaluator: 0
-      AgentPrefab: {fileID: 0}
-      transitionConditions:
-      - rid: 8061473586489589768
-  references:
-    version: 2
-    RefIds:
-    - rid: 8061473586489589768
-      type: {class: FloatTransitionCondition, ns: , asm: Assembly-CSharp}
-      data:
-        transitionHandledByAgent: 0
-        valueToTest: {fileID: 0}
-        comparisonOperator: {fileID: 0}
-        comparand: 0
 --- !u!114 &3379061426255227095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -89,20 +32,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   guid: fc2c21f145ce86843b610f3b16a6ed38
   parent: {fileID: 11400000}
-  graphEditorPosition: {x: 0, y: 0}
+  graphEditorPosition: {x: -12.0000305, y: 2.4000092}
   description: This state is the entry of the FSM. It has 1 connection and will automatically
     transition to that connection
   stateConnection:
-    stateTo: {fileID: 2203131038030077341}
+    stateTo: {fileID: 8616626906314292044}
     transitionHandleMethod: 0
     SelectedTransitionConditionEvaluator: 0
     AgentPrefab: {fileID: 0}
     transitionConditions:
-    - rid: 8061473587761512485
+    - rid: 8061473587761512691
   references:
     version: 2
     RefIds:
-    - rid: 8061473587761512485
+    - rid: 8061473587761512691
       type: {class: FloatTransitionCondition, ns: , asm: Assembly-CSharp}
       data:
         transitionHandledByAgent: 0
@@ -146,35 +89,9 @@ MonoBehaviour:
         m_CallState: 2
   ExitStateEvent:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 9122813975425287443, guid: 8a5dca819b3c32644b9672ab9c8a0cee,
-          type: 3}
-        m_TargetAssemblyTypeName: LilGuyWonder, Assembly-CSharp
-        m_MethodName: ExitState
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   stateConnections:
-    stateConnections:
-    - stateTo: {fileID: 2203131038030077341}
-      transitionHandleMethod: 3
-      SelectedTransitionConditionEvaluator: 0
-      AgentPrefab: {fileID: 0}
-      transitionConditions:
-      - rid: 8061473586489589767
+    stateConnections: []
   references:
     version: 2
-    RefIds:
-    - rid: 8061473586489589767
-      type: {class: FloatTransitionCondition, ns: , asm: Assembly-CSharp}
-      data:
-        transitionHandledByAgent: 0
-        valueToTest: {fileID: 0}
-        comparisonOperator: {fileID: 0}
-        comparand: 0
+    RefIds: []

@@ -305,11 +305,6 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 9122813975425287443, guid: 8a5dca819b3c32644b9672ab9c8a0cee,
-        type: 3}
-      propertyPath: timeBetweenNewWonderPos
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -397,11 +392,6 @@ PrefabInstance:
         type: 3}
       propertyPath: target
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 9122813975425287443, guid: 8a5dca819b3c32644b9672ab9c8a0cee,
-        type: 3}
-      propertyPath: timeBetweenNewWonderPos
-      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -777,11 +767,36 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 997515318630210110, guid: a01c7516e659bdf4b9897ab54df69b69,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3605021681541509320, guid: a01c7516e659bdf4b9897ab54df69b69,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4434987455403460021, guid: a01c7516e659bdf4b9897ab54df69b69,
         type: 3}
       propertyPath: ItemCanvasLogo
       value: 
       objectReference: {fileID: 755699982}
+    - target: {fileID: 4434987455403460021, guid: a01c7516e659bdf4b9897ab54df69b69,
+        type: 3}
+      propertyPath: Items.Array.data[0]
+      value: 
+      objectReference: {fileID: 458766398}
+    - target: {fileID: 4434987455403460021, guid: a01c7516e659bdf4b9897ab54df69b69,
+        type: 3}
+      propertyPath: Items.Array.data[1]
+      value: 
+      objectReference: {fileID: 1842253022}
+    - target: {fileID: 4434987455403460021, guid: a01c7516e659bdf4b9897ab54df69b69,
+        type: 3}
+      propertyPath: Items.Array.data[2]
+      value: 
+      objectReference: {fileID: 1510459944}
     - target: {fileID: 4582019824381016673, guid: a01c7516e659bdf4b9897ab54df69b69,
         type: 3}
       propertyPath: m_Name
@@ -1052,6 +1067,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 442067762}
   m_CullTransparentMesh: 1
+--- !u!1 &458766398 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3605021681541509320, guid: a01c7516e659bdf4b9897ab54df69b69,
+    type: 3}
+  m_PrefabInstance: {fileID: 405637828}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &531383145
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1134,11 +1155,6 @@ PrefabInstance:
         type: 3}
       propertyPath: target
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 9122813975425287443, guid: 8a5dca819b3c32644b9672ab9c8a0cee,
-        type: 3}
-      propertyPath: timeBetweenNewWonderPos
-      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1579,11 +1595,6 @@ PrefabInstance:
         type: 3}
       propertyPath: target
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 9122813975425287443, guid: 8a5dca819b3c32644b9672ab9c8a0cee,
-        type: 3}
-      propertyPath: timeBetweenNewWonderPos
-      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2171,6 +2182,12 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1510459944 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7772200526822353724, guid: a01c7516e659bdf4b9897ab54df69b69,
+    type: 3}
+  m_PrefabInstance: {fileID: 405637828}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1541932155
 GameObject:
   m_ObjectHideFlags: 0
@@ -2539,11 +2556,6 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 9122813975425287443, guid: 8a5dca819b3c32644b9672ab9c8a0cee,
-        type: 3}
-      propertyPath: timeBetweenNewWonderPos
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2728,6 +2740,12 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &1842253022 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 997515318630210110, guid: a01c7516e659bdf4b9897ab54df69b69,
+    type: 3}
+  m_PrefabInstance: {fileID: 405637828}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1971608828
 GameObject:
   m_ObjectHideFlags: 0
@@ -2850,11 +2868,6 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 9122813975425287443, guid: 8a5dca819b3c32644b9672ab9c8a0cee,
-        type: 3}
-      propertyPath: timeBetweenNewWonderPos
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2942,11 +2955,6 @@ PrefabInstance:
         type: 3}
       propertyPath: target
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 9122813975425287443, guid: 8a5dca819b3c32644b9672ab9c8a0cee,
-        type: 3}
-      propertyPath: timeBetweenNewWonderPos
-      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

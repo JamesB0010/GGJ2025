@@ -1,52 +1,89 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
-using Random = UnityEngine.Random;
 
-public class LilGuyWonder : MonoBehaviour
+public class LilGuyWander : MonoBehaviour
 {
-    [SerializeField] private float timeBetweenNewWonderPos;
-
-    [SerializeField] private float speed;
+    [Header("Wander Settings")]
+    [SerializeField] private float speed = 3f;
+    [SerializeField] private float maxSpeed = 5f;
+    [SerializeField] private float circleDistance = 2f;
+    [SerializeField] private float circleRadius = 1f;
+    [SerializeField] private float angleChange = 30f;
 
     private Vector3 targetDirection;
-
-    private float countdownToNewWonderPos;
-
+    private float wanderAngle;
 
     private void Start()
     {
-        this.countdownToNewWonderPos = this.timeBetweenNewWonderPos;
+        wanderAngle = UnityEngine.Random.Range(0f, 360f);
     }
 
-    public void Behave(State state)
+    private void Update()
     {
-        if (countdownToNewWonderPos <= 0)
+        Wander();
+    }
+
+    private void Wander()
+    {
+        // Calculate wander force and update target direction
+        Vector3 wanderForce = CalculateWanderForce();
+        targetDirection = wanderForce.normalized;
+
+        // Move and rotate the object
+        Move(targetDirection);
+        RotateTowards(targetDirection);
+    }
+
+    private Vector3 CalculateWanderForce()
+    {
+        // Calculate the circle center in front of the object
+        Vector3 circleCenter = transform.forward * circleDistance;
+
+        // Calculate displacement from the circle center
+        Vector3 displacement = new Vector3(0, 0, -circleRadius);
+        displacement = SetAngle(displacement);
+
+        // Update wander angle
+        wanderAngle = (wanderAngle + UnityEngine.Random.Range(-angleChange / 2f, angleChange / 2f)) % 360;
+
+        return circleCenter + displacement;
+    }
+
+    private Vector3 SetAngle(Vector3 vector)
+    {
+        float length = vector.magnitude;
+        return new Vector3(
+            Mathf.Cos(wanderAngle * Mathf.Deg2Rad) * length,
+            0,
+            Mathf.Sin(wanderAngle * Mathf.Deg2Rad) * length
+        );
+    }
+
+    private void Move(Vector3 direction)
+    {
+        Vector3 velocity = direction * (speed * Time.deltaTime);
+        velocity = Vector3.ClampMagnitude(velocity, maxSpeed);
+
+        transform.position += velocity;
+    }
+
+    private void RotateTowards(Vector3 direction)
+    {
+        if (direction.sqrMagnitude > 0.01f)
         {
-            state.Transition();
-            
-            return;
+            Quaternion targetRotation = Quaternion.LookRotation(direction, Vector3.up);
+            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * 5f);
         }
-
-        ApplySteering();
-        this.countdownToNewWonderPos -= Time.deltaTime;
     }
 
-    private void ApplySteering()
+    private void OnDrawGizmosSelected()
     {
-        Vector3 velocity = this.targetDirection * this.speed * Time.deltaTime;
-        transform.Translate(velocity);
-    }
+        // Visualize the wander circle and direction
+        Gizmos.color = Color.green;
+        Vector3 circleCenter = transform.position + transform.forward * circleDistance;
+        Gizmos.DrawWireSphere(circleCenter, circleRadius);
 
-    public void ExitState(State state)
-    {
-        this.countdownToNewWonderPos = timeBetweenNewWonderPos;
-    }
-
-    public void RandomizeTargetDirection()
-    {
-        this.targetDirection = new Vector3(Random.Range(-1, 1), 0, Random.Range(-1, 1)).normalized;
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(transform.position, transform.position + targetDirection);
     }
 }
