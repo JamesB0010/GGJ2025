@@ -13,12 +13,12 @@ public class QuestManager : MonoBehaviour
     public int numberOfCreatures = 3;
     private GameObject[] creatures;
     private BoxCollider spawnArea;
+    private int[] creatureCount;
 
     [Header("Questing")]
     public int requiredCreatures;
     public int currentCreatures = 0;
     private bool questComplete;
-
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +28,9 @@ public class QuestManager : MonoBehaviour
 
         // Get the box collider on gameobject
         spawnArea = GetComponent<BoxCollider>();
+
+        // Set creatureCount to array size
+        creatureCount = new int[featuredCreatures.Length];
 
         // Used to spawn in creatures
         CreatureSpawn();
@@ -74,6 +77,19 @@ public class QuestManager : MonoBehaviour
 
             // Add creature to creatures array
             creatures[i] = newCreature;
+
+            // Add to the count for the spawned creature
+            creatureCount[creatureToAdd]++;
         }
+    }
+
+    // Get the creature count, used for tracking number of certain creatures in the scene
+    private int GetCreatureCount(int index)
+    {
+        if (index >= 0 && index < creatures.Length)
+        {
+            return creatureCount[index];
+        }
+        return 0;
     }
 }
