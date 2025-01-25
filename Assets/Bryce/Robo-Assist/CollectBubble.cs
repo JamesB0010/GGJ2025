@@ -30,6 +30,7 @@ public class CollectBubble : MonoBehaviour, I_TransitionEvaluator
         if(NavMesh.SamplePosition(Target.transform.position, out NavMeshHit nmh, Mathf.Infinity, NavMesh.AllAreas)){
             TargetFloorPosition = nmh.position;
         }
+
         // we want to only do this if we are a certain range from the player
         Vector3 direction = (TargetFloorPosition - transform.position).normalized;
         float distanceToTarget = Vector3.Distance(transform.position, TargetFloorPosition);
@@ -41,16 +42,15 @@ public class CollectBubble : MonoBehaviour, I_TransitionEvaluator
             Quaternion targetRotation = Quaternion.LookRotation(direction);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Rotation * Time.deltaTime);
         }
-        else if (distanceToTarget > StopDistance)
-        {
+        else{
             this.GetComponent<NavMeshAgent>().SetDestination(TargetFloorPosition);
         }
-        bool inPosToCollect = this.transform.position.x == Target.transform.position.x && this.transform.position.z == Target.transform.position.z;
-        if (inPosToCollect)
-        {
-            // do collection stuff
-            state.Transition(0);
-        }
+        // bool inPosToCollect = this.transform.position.x == Target.transform.position.x && this.transform.position.z == Target.transform.position.z;
+        // if (inPosToCollect)
+        // {
+        //     // do collection stuff
+        //     state.Transition(0);
+        // }
 
     }
 
