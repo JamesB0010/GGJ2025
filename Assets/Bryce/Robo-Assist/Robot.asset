@@ -21,34 +21,21 @@ MonoBehaviour:
       m_Calls: []
   BehaveEvent:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4296203008924405074, guid: 6776a5c6893e19b4596a7fd117c30420,
-          type: 3}
-        m_TargetAssemblyTypeName: CollectBubble, Assembly-CSharp
-        m_MethodName: Behave
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   ExitStateEvent:
     m_PersistentCalls:
       m_Calls: []
   stateConnections:
     stateConnections:
     - stateTo: {fileID: -5551818321510390713}
-      transitionHandleMethod: 2
+      transitionHandleMethod: 0
       SelectedTransitionConditionEvaluator: 1
       AgentPrefab: {fileID: 5931975180441892522, guid: 6776a5c6893e19b4596a7fd117c30420,
         type: 3}
       transitionConditions:
       - rid: 6112842128898129922
     - stateTo: {fileID: 1308565831893287894}
-      transitionHandleMethod: 2
+      transitionHandleMethod: 0
       SelectedTransitionConditionEvaluator: 1
       AgentPrefab: {fileID: 5931975180441892522, guid: 6776a5c6893e19b4596a7fd117c30420,
         type: 3}
@@ -89,63 +76,24 @@ MonoBehaviour:
   description: Passive state that continues forever until the end of the level
   EnterStateEvent:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6533707494047061708, guid: 6776a5c6893e19b4596a7fd117c30420,
-          type: 3}
-        m_TargetAssemblyTypeName: Idle, Assembly-CSharp
-        m_MethodName: EnterState
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   BehaveEvent:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: -7165012760989627838, guid: 6776a5c6893e19b4596a7fd117c30420,
-          type: 3}
-        m_TargetAssemblyTypeName: FollowPlayer, Assembly-CSharp
-        m_MethodName: Behave
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   ExitStateEvent:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6533707494047061708, guid: 6776a5c6893e19b4596a7fd117c30420,
-          type: 3}
-        m_TargetAssemblyTypeName: Idle, Assembly-CSharp
-        m_MethodName: ExitState
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   stateConnections:
     stateConnections:
     - stateTo: {fileID: 1308565831893287894}
-      transitionHandleMethod: 2
+      transitionHandleMethod: 0
       SelectedTransitionConditionEvaluator: 0
       AgentPrefab: {fileID: 5931975180441892522, guid: 6776a5c6893e19b4596a7fd117c30420,
         type: 3}
       transitionConditions:
       - rid: 1485923461087363122
     - stateTo: {fileID: -9210791070343471647}
-      transitionHandleMethod: 2
+      transitionHandleMethod: 0
       SelectedTransitionConditionEvaluator: 0
       AgentPrefab: {fileID: 5931975180441892522, guid: 6776a5c6893e19b4596a7fd117c30420,
         type: 3}
@@ -206,63 +154,24 @@ MonoBehaviour:
   description: passive roaming idle for the robot when the player is not moving
   EnterStateEvent:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6533707494047061708, guid: 6776a5c6893e19b4596a7fd117c30420,
-          type: 3}
-        m_TargetAssemblyTypeName: Idle, Assembly-CSharp
-        m_MethodName: EnterState
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   BehaveEvent:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6533707494047061708, guid: 6776a5c6893e19b4596a7fd117c30420,
-          type: 3}
-        m_TargetAssemblyTypeName: Idle, Assembly-CSharp
-        m_MethodName: Behave
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   ExitStateEvent:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6533707494047061708, guid: 6776a5c6893e19b4596a7fd117c30420,
-          type: 3}
-        m_TargetAssemblyTypeName: Idle, Assembly-CSharp
-        m_MethodName: ExitState
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   stateConnections:
     stateConnections:
     - stateTo: {fileID: -5551818321510390713}
-      transitionHandleMethod: 2
+      transitionHandleMethod: 0
       SelectedTransitionConditionEvaluator: 2
       AgentPrefab: {fileID: 5931975180441892522, guid: 6776a5c6893e19b4596a7fd117c30420,
         type: 3}
       transitionConditions:
       - rid: 8113285882412007840
     - stateTo: {fileID: -9210791070343471647}
-      transitionHandleMethod: 2
+      transitionHandleMethod: 0
       SelectedTransitionConditionEvaluator: 2
       AgentPrefab: {fileID: 5931975180441892522, guid: 6776a5c6893e19b4596a7fd117c30420,
         type: 3}
