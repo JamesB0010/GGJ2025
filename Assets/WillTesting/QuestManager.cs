@@ -12,7 +12,7 @@ using Random = UnityEngine.Random;
 public class QuestManager : MonoBehaviour
 {
     [Header("Creatures")]
-    public List<EnemyTrigger> creaturePrefabs = new List<EnemyTrigger>();
+    public List<ChecklistEntity> creaturePrefabs = new List<ChecklistEntity>();
     public int spawnCount = 3;
     private GameObject[] activeCreatures;
     private BoxCollider spawnArea;
@@ -21,18 +21,19 @@ public class QuestManager : MonoBehaviour
     [Header("Questing")]
     public int requiredCreatures;
     public int currentCreatures = 0;
-    private bool questComplete;
+    public bool questComplete = false;
 
     [Header("UI")]
     public Transform paperContent;
     public GameObject creatureEntryPrefab;
-    [SerializeField] GameObject[] uiEntries = new GameObject[3];
+    [SerializeField] GameObject[] uiEntries;
 
     // Start is called before the first frame update
     void Start()
     {
         // Setting Creatures needed to be collected to number of spawned ones
         requiredCreatures = spawnCount;
+        uiEntries = new GameObject[creaturePrefabs.Count];
 
         // Get the box collider on gameobject
         spawnArea = GetComponent<BoxCollider>();
@@ -47,32 +48,21 @@ public class QuestManager : MonoBehaviour
         InitialiseCreatureListUI();
     }
 
-    // Update is called once per frame
-    void Update()
-    {   
-        //foreach (var key in creatureDictionary.Keys)
-        //{
-        //    foreach (var value in creatureDictionary.Values)
-        //    {
-        //        Debug.Log("Creature: " + key + "Number In Scene: " + value);
-        //    }
-        //}
-    }
-
-    private void CurrentQuest()
+    private void CheckCurrentQuestCompletion()
     {
         // Checking if player collected all creatures
         if (currentCreatures >= requiredCreatures)
         {
             questComplete = true;
+            Debug.Log("Last Enemy Caught!");
         }
     }
 
     // Call when creatures are collected
-    public void CreatureCollected()
+    public void OnCreatureCollected()
     {
         currentCreatures++;
-        CurrentQuest();
+        CheckCurrentQuestCompletion();
     }
 
     private void CreatureSpawn()
@@ -83,14 +73,14 @@ public class QuestManager : MonoBehaviour
         {
             // Go through creatures that should be in the level and randomly adding them
             int prefabIndex = Random.Range(0, creaturePrefabs.Count);
-            EnemyTrigger currentCreature = creaturePrefabs[prefabIndex];
+            ChecklistEntity currentCreature = creaturePrefabs[prefabIndex];
             GameObject creaturePrefab = currentCreature.gameObject;
 
             // Spawn creatures in area of box collider, this size is set in the inspector
             var spawnBounds = spawnArea.bounds;
             var areaX = Random.Range(spawnBounds.min.x, spawnBounds.max.x);
             var areaZ = Random.Range(spawnBounds.min.z, spawnBounds.max.z);
-            Vector3 spawnPos = new Vector3(areaX, transform.position.y, areaZ);
+            Vector3 spawnPos = new Vector3(areaX, currentCreature.spawnYPos, areaZ);
 
             // Add creature to scene
             GameObject newCreature = Instantiate(creaturePrefab, spawnPos, Quaternion.identity);
@@ -152,6 +142,6 @@ public class QuestManager : MonoBehaviour
         }
 
         // Progression Update
-        CreatureCollected();
+        OnCreatureCollected();
     }
 }
