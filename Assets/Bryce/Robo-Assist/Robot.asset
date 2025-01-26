@@ -202,7 +202,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   guid: d895f3982b6181b4e8bccee76c1e3282
   parent: {fileID: 11400000}
-  graphEditorPosition: {x: 271.2, y: 229.6}
+  graphEditorPosition: {x: 271, y: 218}
   description: passive roaming idle for the robot when the player is not moving
   EnterStateEvent:
     m_PersistentCalls:
