@@ -2009,6 +2009,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1109327556687232591, guid: b6702d877176c67428a4100cd788da60,
+        type: 3}
+      propertyPath: GetTarget.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3866465422694750073}
+    - target: {fileID: 1109327556687232591, guid: b6702d877176c67428a4100cd788da60,
+        type: 3}
+      propertyPath: GetTarget.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: roboAssistAi, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 2686221551238477103, guid: b6702d877176c67428a4100cd788da60,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2153,7 +2163,7 @@ MonoBehaviour:
   isMoving: {fileID: 11400000, guid: 8fbd38c032a3fe741b89c78e4c253674, type: 2}
   Follow_isCollecting: {fileID: 11400000, guid: be9d8f9f6970e1145ba1d21b25f1275f,
     type: 2}
-  Target: {fileID: 3866465422694750072}
+  Target: {fileID: 0}
   Collect_Rotation: 10
   Collect_AccepableMovementAngle: 20
   Collect_TargetFloorPosition: {x: 0, y: 0, z: 0}
