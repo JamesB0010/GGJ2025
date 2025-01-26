@@ -5,19 +5,20 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
+using UnityEngine.Serialization;
 
 public class CollectBubble : MonoBehaviour, I_TransitionEvaluator
 {
     [SerializeField] GameObject Target;
-    [SerializeField] float Rotation;
-    [SerializeField] float AccepableMovementAngle;
-    [SerializeField] Vector3 TargetFloorPosition;
+    [FormerlySerializedAs("Rotation")] [SerializeField] float Collect_Rotation;
+    [FormerlySerializedAs("AccepableMovementAngle")] [SerializeField] float Collect_AccepableMovementAngle;
+    [FormerlySerializedAs("TargetFloorPosition")] [SerializeField] Vector3 Collect_TargetFloorPosition;
     [SerializeField] private GameObject explosionParticle;
     [SerializeField] private UnityEvent robotExplosion;
 
-    [SerializeField] BoolReference isCollecting;
+    [FormerlySerializedAs("isCollecting")] [SerializeField] BoolReference Collection_isCollecting;
 
-    CharacterController controller;
+    CharacterController Collection_controller;
 
     public void InitialiseTarget(GameObject InTarget)
     {
@@ -27,22 +28,22 @@ public class CollectBubble : MonoBehaviour, I_TransitionEvaluator
     public void Behave(State state)
     {
         if(NavMesh.SamplePosition(Target.transform.position, out NavMeshHit nmh, Mathf.Infinity, NavMesh.AllAreas)){
-            TargetFloorPosition = nmh.position;
+            Collect_TargetFloorPosition = nmh.position;
         }
 
         // we want to only do this if we are a certain range from the player
-        Vector3 direction = (TargetFloorPosition - transform.position).normalized;
-        float distanceToTarget = Vector3.Distance(transform.position, TargetFloorPosition);
+        Vector3 direction = (Collect_TargetFloorPosition - transform.position).normalized;
+        float distanceToTarget = Vector3.Distance(transform.position, Collect_TargetFloorPosition);
 
         float angleToTarget = Vector3.Angle(transform.forward, direction);
 
-        if (angleToTarget > AccepableMovementAngle)
+        if (angleToTarget > Collect_AccepableMovementAngle)
         {
             Quaternion targetRotation = Quaternion.LookRotation(direction);
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Rotation * Time.deltaTime);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Collect_Rotation * Time.deltaTime);
         }
         else{
-            this.GetComponent<NavMeshAgent>().SetDestination(TargetFloorPosition);
+            this.GetComponent<NavMeshAgent>().SetDestination(Collect_TargetFloorPosition);
         }
 
         Vector3 target = Target.transform.position;
@@ -57,14 +58,14 @@ public class CollectBubble : MonoBehaviour, I_TransitionEvaluator
             }
             Destroy(this.Target.gameObject);
             this.robotExplosion?.Invoke();
-            Instantiate(this.explosionParticle, TargetFloorPosition + (Vector3.up * 4.9f), Quaternion.identity);
+            Instantiate(this.explosionParticle, Collect_TargetFloorPosition + (Vector3.up * 4.9f), Quaternion.identity);
             state.Transition(0);
         }
 
     }
     public void ExitState(State state)
     {
-        isCollecting.SetValue(false);
+        Collection_isCollecting.SetValue(false);
     }
 
     public bool EvaluateTransition(int connectionIndex)
