@@ -21,7 +21,7 @@ public class QuestManager : MonoBehaviour
     [Header("Questing")]
     public int requiredCreatures;
     public int currentCreatures = 0;
-    private bool questComplete;
+    public bool questComplete = false;
 
     [Header("UI")]
     public Transform paperContent;
@@ -48,32 +48,21 @@ public class QuestManager : MonoBehaviour
         InitialiseCreatureListUI();
     }
 
-    // Update is called once per frame
-    void Update()
-    {   
-        //foreach (var key in creatureDictionary.Keys)
-        //{
-        //    foreach (var value in creatureDictionary.Values)
-        //    {
-        //        Debug.Log("Creature: " + key + "Number In Scene: " + value);
-        //    }
-        //}
-    }
-
-    private void CurrentQuest()
+    private void CheckCurrentQuestCompletion()
     {
         // Checking if player collected all creatures
         if (currentCreatures >= requiredCreatures)
         {
             questComplete = true;
+            Debug.Log("Last Enemy Caught!");
         }
     }
 
     // Call when creatures are collected
-    public void CreatureCollected()
+    public void OnCreatureCollected()
     {
         currentCreatures++;
-        CurrentQuest();
+        CheckCurrentQuestCompletion();
     }
 
     private void CreatureSpawn()
@@ -153,6 +142,6 @@ public class QuestManager : MonoBehaviour
         }
 
         // Progression Update
-        CreatureCollected();
+        OnCreatureCollected();
     }
 }
