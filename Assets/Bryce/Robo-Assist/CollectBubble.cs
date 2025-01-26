@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
 
 public class CollectBubble : MonoBehaviour, I_TransitionEvaluator
 {
@@ -10,6 +12,7 @@ public class CollectBubble : MonoBehaviour, I_TransitionEvaluator
     [SerializeField] float AccepableMovementAngle;
     [SerializeField] Vector3 TargetFloorPosition;
     [SerializeField] private GameObject explosionParticle;
+    [SerializeField] private UnityEvent robotExplosion;
 
     [SerializeField] BoolReference isCollecting;
 
@@ -40,10 +43,15 @@ public class CollectBubble : MonoBehaviour, I_TransitionEvaluator
         else{
             this.GetComponent<NavMeshAgent>().SetDestination(TargetFloorPosition);
         }
-        bool inPosToCollect = this.transform.position.x == Target.transform.position.x && this.transform.position.z == Target.transform.position.z;
+
+        float differenceX = Target.transform.position.x - this.transform.position.x;
+        float differenceY = Target.transform.position.y - this.transform.position.y;
+        float threashold = 1f;
+        bool inPosToCollect = differenceX <= threashold && differenceY <= threashold;
         if (inPosToCollect)
         {
             Destroy(this.Target.gameObject);
+            this.robotExplosion?.Invoke();
             state.Transition(0);
         }
 
