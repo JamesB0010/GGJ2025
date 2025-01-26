@@ -9,6 +9,8 @@ public class Radio : MonoBehaviour
     [SerializeField] List<AudioSource> RadioStations;
     [SerializeField] AudioSource RadioChangeSound;
     private int itterator = 0;
+
+    [SerializeField] private bool radioEnabled = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +19,9 @@ public class Radio : MonoBehaviour
             Station.volume = 0;
         }
         RadioStations[itterator].volume = 1;
+
+        if (!radioEnabled)
+            RadioStations[itterator].volume = 0;
     }
 
     public void ChangeRadioStation()
