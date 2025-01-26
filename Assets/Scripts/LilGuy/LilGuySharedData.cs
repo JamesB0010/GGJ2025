@@ -6,11 +6,11 @@ using UnityEngine;
 
 public class LilGuySharedData : MonoBehaviour
 {
-    private Transform player;
+    [SerializeField] private Transform player;
 
     public Transform Player => this.player;
 
-    private void Start()
+    private void Awake()
     {
         this.player = FindObjectOfType<PlayerController>().transform;
     }

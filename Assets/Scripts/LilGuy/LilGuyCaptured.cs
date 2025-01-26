@@ -7,6 +7,8 @@ public class LilGuyCaptured : MonoBehaviour
 {
     [SerializeField] Transform visualTransform;
     [SerializeField] Animator bodyAnimator;
+    [SerializeField] Collider bodyCollider;
+    [SerializeField] SoapBubble containerBubble;
     [SerializeField] private float rotationSpeed;
     [SerializeField] private float upwardSpeed;
 
@@ -15,11 +17,13 @@ public class LilGuyCaptured : MonoBehaviour
     public void Enter(State state)
     {
         this.rotationDirection = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized; 
+        containerBubble  = transform.parent.GetComponent<SoapBubble>();
         bodyAnimator.enabled = false;
+        bodyCollider.enabled = false;
     }
     public void Behave(State state)
     {
         visualTransform.Rotate(this.rotationDirection, this.rotationSpeed * Time.deltaTime);
-        visualTransform.position += Vector3.up * upwardSpeed * Time.deltaTime;
+        visualTransform.position = containerBubble.transform.position;
     }
 }

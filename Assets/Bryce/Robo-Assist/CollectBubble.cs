@@ -43,7 +43,13 @@ public class CollectBubble : MonoBehaviour, I_TransitionEvaluator
         bool inPosToCollect = this.transform.position.x == Target.transform.position.x && this.transform.position.z == Target.transform.position.z;
         if (inPosToCollect)
         {
-            Destroy(this.Target.gameObject);
+            // Hook up here to the Quest Manager
+            ChecklistEntity ce = Target.GetComponentInChildren<ChecklistEntity>();
+            if(ce != null){
+                Debug.Log($"Successfully extracted checklist entity from {Target.name}");
+                ce.OnCollect();
+                Destroy(this.Target.gameObject);
+            }
             state.Transition(0);
         }
 

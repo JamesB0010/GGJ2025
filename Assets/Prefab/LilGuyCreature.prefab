@@ -125,6 +125,7 @@ GameObject:
   - component: {fileID: 746424955376059100}
   - component: {fileID: 549938993371258388}
   - component: {fileID: 1775814200211931121}
+  - component: {fileID: 186227446572084573}
   m_Layer: 8
   m_Name: LilGuyCreature
   m_TagString: Capturable
@@ -203,6 +204,7 @@ MonoBehaviour:
   lookAheadDistance: 2.2
   avoidenceStrength: 50
   playerDetectionRange: 6
+  sharedData: {fileID: 8581479391903827420}
   itemsToAvoid: []
 --- !u!114 &1757601329518091159
 MonoBehaviour:
@@ -231,6 +233,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visualTransform: {fileID: 8652981881683492777}
+  bodyAnimator: {fileID: 474791955193159907}
+  bodyCollider: {fileID: 549938993371258388}
   rotationSpeed: 33
   upwardSpeed: 0.1
 --- !u!114 &8581479391903827420
@@ -245,6 +249,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55ef40c902e41af489f021e5304fa905, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
 --- !u!114 &746424955376059100
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -315,6 +320,23 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &186227446572084573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 438934681523411806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cd94d7e616c4a048b77c5d874b97f6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data:
+    id: 0
+    name: Hehee
+    image: {fileID: 21300000, guid: 0cceb88d25459ae43bd9146aaf2b406e, type: 3}
+  questManager: {fileID: 0}
 --- !u!1 &452101494440549792
 GameObject:
   m_ObjectHideFlags: 0
