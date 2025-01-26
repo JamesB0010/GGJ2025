@@ -48,8 +48,8 @@ public class CollectBubble : MonoBehaviour, I_TransitionEvaluator
             if(ce != null){
                 Debug.Log($"Successfully extracted checklist entity from {Target.name}");
                 ce.OnCollect();
-                Destroy(this.Target.gameObject);
             }
+            Destroy(this.Target.gameObject);
             state.Transition(0);
         }
 
