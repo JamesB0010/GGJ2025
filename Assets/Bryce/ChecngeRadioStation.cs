@@ -1,3 +1,4 @@
+using System;
 using EvolveGames;
 using System.Collections;
 using System.Collections.Generic;
@@ -8,6 +9,14 @@ public class ChecngeRadioStation : MonoBehaviour
 {
     [SerializeField] GameObject Robot;
     [SerializeField] Camera Camera;
+
+    [SerializeField] private Animator animator;
+
+    private void Awake()
+    {
+        this.animator = GetComponent<Animator>();
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -21,6 +30,7 @@ public class ChecngeRadioStation : MonoBehaviour
                 if (hit.collider.gameObject == Robot)
                 {
                   ChangeRadioStation?.Invoke();
+                  this.animator.SetTrigger("PressSkip");
                 }
             }
         }
