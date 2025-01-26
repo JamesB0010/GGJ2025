@@ -85,7 +85,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   guid: 38fe434993c0371459a5099ff4ae1827
   parent: {fileID: 11400000}
-  graphEditorPosition: {x: 21, y: 422}
+  graphEditorPosition: {x: 28, y: 426}
   description: Passive state that continues forever until the end of the level
   EnterStateEvent:
     m_PersistentCalls:
