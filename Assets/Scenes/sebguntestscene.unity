@@ -383,7 +383,7 @@ GameObject:
   - component: {fileID: 510080185}
   - component: {fileID: 510080189}
   - component: {fileID: 510080190}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Drop Pod
   m_TagString: Drop Pod
   m_Icon: {fileID: 0}
@@ -2226,5 +2226,5 @@ SceneRoots:
   - {fileID: 3866465422694750068}
   - {fileID: 622209001}
   - {fileID: 194152150}
-  - {fileID: 510080188}
   - {fileID: 668757073}
+  - {fileID: 510080188}

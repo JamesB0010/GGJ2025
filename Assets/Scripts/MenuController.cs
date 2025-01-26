@@ -7,7 +7,7 @@ public class MenuController : MonoBehaviour
 {
     public void LoadMainGame()
     {
-        SceneManager.LoadScene(0); // check build settings.
+        SceneManager.LoadScene(1); // check build settings.
     }
     
     public void Quit()

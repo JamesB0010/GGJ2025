@@ -24,7 +24,7 @@ public class PlayerEndgame : MonoBehaviour
                 // Actually end the game
                 Cursor.visible = true;
                 Cursor.lockState  = CursorLockMode.None;
-                SceneManager.LoadScene(1); // make sure build settings allow for this to work.
+                SceneManager.LoadScene(2); // make sure build settings allow for this to work.
             }
         }
         else{
