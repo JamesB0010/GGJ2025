@@ -137,7 +137,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   guid: e07b1330edcc70d498ff56eec608636a
   parent: {fileID: 11400000}
-  graphEditorPosition: {x: -25, y: 288}
+  graphEditorPosition: {x: -6.4000244, y: 306.4}
   description: A wonder position has been chose so the lil guy will wonder to it
   EnterStateEvent:
     m_PersistentCalls:
@@ -145,7 +145,7 @@ MonoBehaviour:
   BehaveEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 9122813975425287443, guid: 8a5dca819b3c32644b9672ab9c8a0cee,
+      - m_Target: {fileID: 841792748950214885, guid: 737c44d3f6b815144ad4286a81f43d17,
           type: 3}
         m_TargetAssemblyTypeName: LilGuyWander, Assembly-CSharp
         m_MethodName: Behave
@@ -166,7 +166,7 @@ MonoBehaviour:
     - stateTo: {fileID: 8618638473977610625}
       transitionHandleMethod: 2
       SelectedTransitionConditionEvaluator: 0
-      AgentPrefab: {fileID: 866312037972305148, guid: 8a5dca819b3c32644b9672ab9c8a0cee,
+      AgentPrefab: {fileID: 438934681523411806, guid: 737c44d3f6b815144ad4286a81f43d17,
         type: 3}
       transitionConditions:
       - rid: 8061473599240798238
@@ -215,7 +215,7 @@ MonoBehaviour:
   BehaveEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8744461054770831830, guid: 8a5dca819b3c32644b9672ab9c8a0cee,
+      - m_Target: {fileID: 1757601329518091159, guid: 737c44d3f6b815144ad4286a81f43d17,
           type: 3}
         m_TargetAssemblyTypeName: LilGuyRunAway, Assembly-CSharp
         m_MethodName: Behave
@@ -236,7 +236,7 @@ MonoBehaviour:
     - stateTo: {fileID: 8616626906314292044}
       transitionHandleMethod: 2
       SelectedTransitionConditionEvaluator: 1
-      AgentPrefab: {fileID: 866312037972305148, guid: 8a5dca819b3c32644b9672ab9c8a0cee,
+      AgentPrefab: {fileID: 438934681523411806, guid: 737c44d3f6b815144ad4286a81f43d17,
         type: 3}
       transitionConditions:
       - rid: 8061473599240798393

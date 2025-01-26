@@ -45,8 +45,9 @@ public class CollectBubble : MonoBehaviour, I_TransitionEvaluator
             this.GetComponent<NavMeshAgent>().SetDestination(TargetFloorPosition);
         }
 
-        
-        if (Vector3.Distance(transform.position, Target.transform.position) <= 2f)
+        Vector3 target = Target.transform.position;
+        target.y = transform.position.y;
+        if (Vector3.Distance(transform.position, target) <= 2f)
         {
             // Hook up here to the Quest Manager
             ChecklistEntity ce = Target.GetComponentInChildren<ChecklistEntity>();
