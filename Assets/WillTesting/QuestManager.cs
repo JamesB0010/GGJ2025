@@ -12,7 +12,7 @@ using Random = UnityEngine.Random;
 public class QuestManager : MonoBehaviour
 {
     [Header("Creatures")]
-    public List<EnemyTrigger> creaturePrefabs = new List<EnemyTrigger>();
+    public List<ChecklistEntity> creaturePrefabs = new List<ChecklistEntity>();
     public int spawnCount = 3;
     private GameObject[] activeCreatures;
     private BoxCollider spawnArea;
@@ -26,13 +26,14 @@ public class QuestManager : MonoBehaviour
     [Header("UI")]
     public Transform paperContent;
     public GameObject creatureEntryPrefab;
-    [SerializeField] GameObject[] uiEntries = new GameObject[3];
+    [SerializeField] GameObject[] uiEntries;
 
     // Start is called before the first frame update
     void Start()
     {
         // Setting Creatures needed to be collected to number of spawned ones
         requiredCreatures = spawnCount;
+        uiEntries = new GameObject[creaturePrefabs.Count];
 
         // Get the box collider on gameobject
         spawnArea = GetComponent<BoxCollider>();
@@ -83,7 +84,7 @@ public class QuestManager : MonoBehaviour
         {
             // Go through creatures that should be in the level and randomly adding them
             int prefabIndex = Random.Range(0, creaturePrefabs.Count);
-            EnemyTrigger currentCreature = creaturePrefabs[prefabIndex];
+            ChecklistEntity currentCreature = creaturePrefabs[prefabIndex];
             GameObject creaturePrefab = currentCreature.gameObject;
 
             // Spawn creatures in area of box collider, this size is set in the inspector

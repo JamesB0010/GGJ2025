@@ -50,6 +50,12 @@ public class CollectBubble : MonoBehaviour, I_TransitionEvaluator
         bool inPosToCollect = differenceX <= threashold && differenceY <= threashold;
         if (inPosToCollect)
         {
+            // Hook up here to the Quest Manager
+            ChecklistEntity ce = Target.GetComponentInChildren<ChecklistEntity>();
+            if(ce != null){
+                Debug.Log($"Successfully extracted checklist entity from {Target.name}");
+                ce.OnCollect();
+            }
             Destroy(this.Target.gameObject);
             this.robotExplosion?.Invoke();
             state.Transition(0);

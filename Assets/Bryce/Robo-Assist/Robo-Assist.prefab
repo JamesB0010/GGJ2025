@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2383255745258812819}
   - component: {fileID: 5245726367031037801}
+  - component: {fileID: 4036734360428597192}
   - component: {fileID: -7165012760989627838}
   - component: {fileID: 4296203008924405074}
   - component: {fileID: 6533707494047061708}
-  - component: {fileID: 4036734360428597192}
   - component: {fileID: 6684152750937948449}
   m_Layer: 0
   m_Name: Robo-Assist
@@ -59,6 +59,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.0780101, y: 1.1870419, z: 1}
   m_Center: {x: -0.03900504, y: -0.09352114, z: 0}
+--- !u!114 &4036734360428597192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5931975180441892522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88ad5ca929f7c6f449176dd6da12e5ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  finiteStateMachine: {fileID: 11400000, guid: 6904921a8ff22994fa5d0ee017390a3a, type: 2}
 --- !u!114 &-7165012760989627838
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116,19 +129,6 @@ MonoBehaviour:
   MoveCooldown: 6
   isPlayerMoving: {fileID: 11400000, guid: 8fbd38c032a3fe741b89c78e4c253674, type: 2}
   isCollecting: {fileID: 11400000, guid: be9d8f9f6970e1145ba1d21b25f1275f, type: 2}
---- !u!114 &4036734360428597192
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5931975180441892522}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88ad5ca929f7c6f449176dd6da12e5ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  finiteStateMachine: {fileID: 11400000, guid: 6904921a8ff22994fa5d0ee017390a3a, type: 2}
 --- !u!195 &6684152750937948449
 NavMeshAgent:
   m_ObjectHideFlags: 0
