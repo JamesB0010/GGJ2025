@@ -197,7 +197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 848d5d47cc73d0b4e92f1ff85140f797, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 5
+  maxSpeed: 0
   circleDistance: 3.86
   circleRadius: 0.66
   angleChange: 30
@@ -235,6 +235,7 @@ MonoBehaviour:
   visualTransform: {fileID: 8652981881683492777}
   bodyAnimator: {fileID: 474791955193159907}
   bodyCollider: {fileID: 549938993371258388}
+  containerBubble: {fileID: 0}
   rotationSpeed: 33
   upwardSpeed: 0.1
 --- !u!114 &8581479391903827420

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -44,11 +45,8 @@ public class CollectBubble : MonoBehaviour, I_TransitionEvaluator
             this.GetComponent<NavMeshAgent>().SetDestination(TargetFloorPosition);
         }
 
-        float differenceX = Target.transform.position.x - this.transform.position.x;
-        float differenceY = Target.transform.position.y - this.transform.position.y;
-        float threashold = 1f;
-        bool inPosToCollect = differenceX <= threashold && differenceY <= threashold;
-        if (inPosToCollect)
+        
+        if (Vector3.Distance(transform.position, Target.transform.position) <= 2f)
         {
             // Hook up here to the Quest Manager
             ChecklistEntity ce = Target.GetComponentInChildren<ChecklistEntity>();
@@ -58,6 +56,7 @@ public class CollectBubble : MonoBehaviour, I_TransitionEvaluator
             }
             Destroy(this.Target.gameObject);
             this.robotExplosion?.Invoke();
+            Instantiate(this.explosionParticle, TargetFloorPosition + (Vector3.up * 4.9f), Quaternion.identity);
             state.Transition(0);
         }
 

@@ -166,7 +166,7 @@ MonoBehaviour:
     - stateTo: {fileID: 8618638473977610625}
       transitionHandleMethod: 2
       SelectedTransitionConditionEvaluator: 0
-      AgentPrefab: {fileID: 3172299067103179785, guid: 168c3ff3b03a63e409857d3dcfecc7b3,
+      AgentPrefab: {fileID: 866312037972305148, guid: 8a5dca819b3c32644b9672ab9c8a0cee,
         type: 3}
       transitionConditions:
       - rid: 8061473599240798238
