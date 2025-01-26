@@ -1385,7 +1385,7 @@ PrefabInstance:
     - target: {fileID: 3634523856162787420, guid: 2b58401a79ccf214a891fd0069474e8a,
         type: 3}
       propertyPath: spawnCount
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3634523856162787420, guid: 2b58401a79ccf214a891fd0069474e8a,
         type: 3}
@@ -2009,6 +2009,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 94174899360201056, guid: b6702d877176c67428a4100cd788da60,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1109327556687232591, guid: b6702d877176c67428a4100cd788da60,
         type: 3}
       propertyPath: GetTarget.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -2073,6 +2078,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5338345532455987361, guid: b6702d877176c67428a4100cd788da60,
+        type: 3}
+      propertyPath: TextToWrite
+      value: blubublbub bbullubblub
       objectReference: {fileID: 0}
     - target: {fileID: 6606190537984060624, guid: b6702d877176c67428a4100cd788da60,
         type: 3}

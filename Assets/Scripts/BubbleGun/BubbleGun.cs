@@ -18,6 +18,7 @@ public class BubbleGun : MonoBehaviour
     [SerializeField] SoapBubble currentBubble; // This is the one that gets instantiated and fired during a charge shot
     [SerializeField] float sizeIncreaseRate; // how much does the bubble increase in size while being charged. In Scale Units per Second
     [SerializeField] GameObject lightAttackPrefab;
+    [SerializeField] LayerMask bubbleLayer;
 
     [Header("Ammo")]
     [SerializeField] float maxFuel;
@@ -95,7 +96,7 @@ public class BubbleGun : MonoBehaviour
     {
         // TODO Fire the bubble in such a direction that it goes to the center of the screen.
         Ray aimRay = playerCam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
-        if(Physics.Raycast(aimRay, out RaycastHit hit, Mathf.Infinity)){
+        if(Physics.Raycast(aimRay, out RaycastHit hit, Mathf.Infinity, bubbleLayer)){
             Vector3 aimPoint = hit.point;
             currentBubble.transform.LookAt(aimPoint);
         }

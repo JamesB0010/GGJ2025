@@ -7,6 +7,7 @@ using UnityEngine.Events;
 public class SetRobotCollection : MonoBehaviour
 {
     [SerializeField] ItemChange ItemSelect;
+    [SerializeField] LayerMask BubbleLayers;
     [SerializeField] Camera Camera;
     [SerializeField] BoolReference isCollecting;
     private Animator animator;
@@ -26,7 +27,7 @@ public class SetRobotCollection : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
-                if (Physics.Raycast(ray, out hit))
+                if (Physics.Raycast(ray, out hit, Mathf.Infinity, BubbleLayers))
                 {
                     if (hit.collider.TryGetComponent<SoapBubble>(out SoapBubble Bubble))
                     {

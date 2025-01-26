@@ -18,7 +18,7 @@ public class BloomOnExplosion : MonoBehaviour
     public void OnExplosion()
     {
         Bloom bloom = volume.profile.components[0] as Bloom;
-        bloom.intensity.value = 62;
+        bloom.intensity.value = 124;
 
         bloom.intensity.value.LerpTo(0.0f, explosionBloomFalloffTime, val => bloom.intensity.value = val, null,
             this.explosionBloomFalloff);
