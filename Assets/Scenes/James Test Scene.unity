@@ -124,6 +124,26 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &22097018 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3579061176688380379, guid: b6702d877176c67428a4100cd788da60,
+    type: 3}
+  m_PrefabInstance: {fileID: 3866465422694750068}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &22097022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 22097018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a19f264845aa60f4490d7571e05b2234, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  normalFace: {fileID: 21300000, guid: 6513ac9bda48be44fa96e30ab3decd97, type: 3}
+  happyFace: {fileID: 21300000, guid: ccf95130530cf6347b383e3202f5fd0d, type: 3}
 --- !u!1 &90160570
 GameObject:
   m_ObjectHideFlags: 0
@@ -2021,6 +2041,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 70955688679805438, guid: b6702d877176c67428a4100cd788da60,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1770345757466393817, guid: b6702d877176c67428a4100cd788da60,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8e1d3122fe9f69145abc8077a9ea27f1, type: 2}
+    - target: {fileID: 1770345757466393817, guid: b6702d877176c67428a4100cd788da60,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8235479e7981a3b4198befaaa4d87cd8, type: 2}
+    - target: {fileID: 1770345757466393817, guid: b6702d877176c67428a4100cd788da60,
+        type: 3}
+      propertyPath: m_Materials.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2c465888d346cfd47a6c277a9a8dc9c8, type: 2}
     - target: {fileID: 2686221551238477103, guid: b6702d877176c67428a4100cd788da60,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2071,6 +2111,27 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5683680826861852177, guid: b6702d877176c67428a4100cd788da60,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6513ac9bda48be44fa96e30ab3decd97,
+        type: 3}
+    - target: {fileID: 5683680826861852177, guid: b6702d877176c67428a4100cd788da60,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5683680826861852177, guid: b6702d877176c67428a4100cd788da60,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5683680826861852177, guid: b6702d877176c67428a4100cd788da60,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6415689594150065030, guid: b6702d877176c67428a4100cd788da60,
         type: 3}
       propertyPath: m_CameraType
@@ -2083,13 +2144,52 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7548287189877065685, guid: b6702d877176c67428a4100cd788da60,
         type: 3}
+      propertyPath: robotExplosion.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7548287189877065685, guid: b6702d877176c67428a4100cd788da60,
+        type: 3}
+      propertyPath: robotExplosion.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7548287189877065685, guid: b6702d877176c67428a4100cd788da60,
+        type: 3}
       propertyPath: robotExplosion.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 675483737}
+    - target: {fileID: 7548287189877065685, guid: b6702d877176c67428a4100cd788da60,
+        type: 3}
+      propertyPath: robotExplosion.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 22097022}
+    - target: {fileID: 7548287189877065685, guid: b6702d877176c67428a4100cd788da60,
+        type: 3}
+      propertyPath: robotExplosion.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7548287189877065685, guid: b6702d877176c67428a4100cd788da60,
+        type: 3}
+      propertyPath: robotExplosion.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: OnExplosion
+      objectReference: {fileID: 0}
+    - target: {fileID: 7548287189877065685, guid: b6702d877176c67428a4100cd788da60,
+        type: 3}
+      propertyPath: robotExplosion.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: robotFaces, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7548287189877065685, guid: b6702d877176c67428a4100cd788da60,
+        type: 3}
+      propertyPath: robotExplosion.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3579061176688380379, guid: b6702d877176c67428a4100cd788da60,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 22097022}
   m_SourcePrefab: {fileID: 100100000, guid: b6702d877176c67428a4100cd788da60, type: 3}
 --- !u!1001 &7670035854777380163
 PrefabInstance:
