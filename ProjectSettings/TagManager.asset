@@ -7,6 +7,10 @@ TagManager:
   - Ladder
   - BigBubble
   - Capturable
+  - CreatureOne
+  - CreatureTwo
+  - CreatureThree
+  - Drop Pod
   layers:
   - Default
   - TransparentFX
