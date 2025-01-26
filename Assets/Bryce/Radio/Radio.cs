@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,20 +15,16 @@ public class Radio : MonoBehaviour
         foreach(var Station in RadioStations)
         {
             Station.volume = 0;
-            Station.Play();
         }
         RadioStations[itterator].volume = 1;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ChangeRadioStation()
     {
-    }
-
-    public void ChangeRadioStation(GameObject InTarget)
-    {
+        Debug.Log("Change Radio Stateion");
         RadioStations[itterator].volume = 0;
-        itterator++;
+        itterator = (itterator + 1) % RadioStations.Count;
+        RadioStations[itterator].volume = 1;
         RadioChangeSound.Play();
     }
 }

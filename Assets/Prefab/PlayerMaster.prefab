@@ -1229,6 +1229,7 @@ GameObject:
   - component: {fileID: 9198819535609980281}
   - component: {fileID: 4520563734432459550}
   - component: {fileID: 5683680826861852177}
+  - component: {fileID: 61982419056188350}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -1276,14 +1277,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ccf95130530cf6347b383e3202f5fd0d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6513ac9bda48be44fa96e30ab3decd97, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1293,6 +1294,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &61982419056188350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3579061176688380379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a19f264845aa60f4490d7571e05b2234, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  normalFace: {fileID: 21300000, guid: 6513ac9bda48be44fa96e30ab3decd97, type: 3}
+  happyFace: {fileID: 21300000, guid: ccf95130530cf6347b383e3202f5fd0d, type: 3}
 --- !u!1 &3699353948758759892
 GameObject:
   m_ObjectHideFlags: 0
@@ -2887,7 +2902,7 @@ PrefabInstance:
     - target: {fileID: 4296203008924405074, guid: 6776a5c6893e19b4596a7fd117c30420,
         type: 3}
       propertyPath: robotExplosion.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4296203008924405074, guid: 6776a5c6893e19b4596a7fd117c30420,
         type: 3}
@@ -2896,7 +2911,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4296203008924405074, guid: 6776a5c6893e19b4596a7fd117c30420,
         type: 3}
+      propertyPath: robotExplosion.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4296203008924405074, guid: 6776a5c6893e19b4596a7fd117c30420,
+        type: 3}
+      propertyPath: robotExplosion.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 61982419056188350}
+    - target: {fileID: 4296203008924405074, guid: 6776a5c6893e19b4596a7fd117c30420,
+        type: 3}
       propertyPath: robotExplosion.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4296203008924405074, guid: 6776a5c6893e19b4596a7fd117c30420,
+        type: 3}
+      propertyPath: robotExplosion.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4296203008924405074, guid: 6776a5c6893e19b4596a7fd117c30420,
@@ -2906,12 +2936,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4296203008924405074, guid: 6776a5c6893e19b4596a7fd117c30420,
         type: 3}
+      propertyPath: robotExplosion.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: OnExplosion
+      objectReference: {fileID: 0}
+    - target: {fileID: 4296203008924405074, guid: 6776a5c6893e19b4596a7fd117c30420,
+        type: 3}
       propertyPath: robotExplosion.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: BloomOnExplosion, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4296203008924405074, guid: 6776a5c6893e19b4596a7fd117c30420,
         type: 3}
+      propertyPath: robotExplosion.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: robotFaces, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4296203008924405074, guid: 6776a5c6893e19b4596a7fd117c30420,
+        type: 3}
       propertyPath: robotExplosion.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4296203008924405074, guid: 6776a5c6893e19b4596a7fd117c30420,
+        type: 3}
+      propertyPath: robotExplosion.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4575924297688422515, guid: 6776a5c6893e19b4596a7fd117c30420,
@@ -2921,9 +2966,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5462377052470589022, guid: 6776a5c6893e19b4596a7fd117c30420,
         type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8e1d3122fe9f69145abc8077a9ea27f1, type: 2}
+    - target: {fileID: 5462377052470589022, guid: 6776a5c6893e19b4596a7fd117c30420,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8235479e7981a3b4198befaaa4d87cd8, type: 2}
+    - target: {fileID: 5462377052470589022, guid: 6776a5c6893e19b4596a7fd117c30420,
+        type: 3}
       propertyPath: m_Materials.Array.data[2]
       value: 
       objectReference: {fileID: 2100000, guid: da3460b0db5abdd4980bd204d6f27665, type: 2}
+    - target: {fileID: 5462377052470589022, guid: 6776a5c6893e19b4596a7fd117c30420,
+        type: 3}
+      propertyPath: m_Materials.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2c465888d346cfd47a6c277a9a8dc9c8, type: 2}
     - target: {fileID: 5931975180441892522, guid: 6776a5c6893e19b4596a7fd117c30420,
         type: 3}
       propertyPath: m_Name
@@ -2966,7 +3026,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 75805916486335533}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: d3117d68aba8d604eaec690df1a2b5bd, type: 3}
