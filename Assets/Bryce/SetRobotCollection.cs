@@ -9,10 +9,12 @@ public class SetRobotCollection : MonoBehaviour
     [SerializeField] ItemChange ItemSelect;
     [SerializeField] Camera Camera;
     [SerializeField] BoolReference isCollecting;
+    private Animator animator;
 
     private void Start()
     {
         ItemSelect = GetComponentInParent<PlayerController>().GetComponent<ItemChange>();
+        this.animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -33,6 +35,7 @@ public class SetRobotCollection : MonoBehaviour
                         {
                             GetTarget?.Invoke(hit.collider.gameObject);
                             isCollecting.SetValue(true);
+                            this.animator.SetTrigger("PressRed");
                         }
                     }
                 }

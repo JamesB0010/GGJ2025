@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-public class EnemyTrigger : MonoBehaviour
+public class ChecklistEntity : MonoBehaviour
 {
     [System.Serializable] public struct CreatureData
     {
@@ -13,8 +13,9 @@ public class EnemyTrigger : MonoBehaviour
     }
 
     [SerializeField] public CreatureData data;
-    private GameObject questManager;
+    [SerializeField] private GameObject questManager;
     private QuestManager questScript;
+    public float spawnYPos;
 
     private void Start()
     {
@@ -22,12 +23,9 @@ public class EnemyTrigger : MonoBehaviour
         questScript = questManager.GetComponent<QuestManager>();
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void OnCollect()
     {
-        if (other.gameObject.CompareTag("GameController"))
-        {
-            questScript.UISubtractAtID(data.id);
-            Destroy(this.gameObject);
-        }
+        Debug.Log($"Creature Collected: {name}");
+        questScript.UISubtractAtID(data.id);
     }
 }
