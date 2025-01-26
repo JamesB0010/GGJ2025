@@ -91,7 +91,7 @@ public class QuestManager : MonoBehaviour
             var spawnBounds = spawnArea.bounds;
             var areaX = Random.Range(spawnBounds.min.x, spawnBounds.max.x);
             var areaZ = Random.Range(spawnBounds.min.z, spawnBounds.max.z);
-            Vector3 spawnPos = new Vector3(areaX, transform.position.y, areaZ);
+            Vector3 spawnPos = new Vector3(areaX, currentCreature.spawnYPos, areaZ);
 
             // Add creature to scene
             GameObject newCreature = Instantiate(creaturePrefab, spawnPos, Quaternion.identity);

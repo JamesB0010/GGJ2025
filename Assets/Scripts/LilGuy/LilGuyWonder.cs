@@ -51,7 +51,9 @@ public class LilGuyWander : MonoBehaviour, I_TransitionEvaluator
         // Update target direction for visualization
         targetDirection = circleCenter + displacement;
 
-        return (circleCenter + displacement) - transform.position;
+        Vector3 force = (circleCenter + displacement) - transform.position;
+        force.y = 0;
+        return force;
     }
 
     public Vector3 calculateAvoidenceForce(Vector3 velocity)
@@ -68,6 +70,7 @@ public class LilGuyWander : MonoBehaviour, I_TransitionEvaluator
             avoidenceForce *= this.avoidenceStrength;
         }
 
+        avoidenceForce.y = 0;
         return avoidenceForce;
     }
 
@@ -79,11 +82,8 @@ public class LilGuyWander : MonoBehaviour, I_TransitionEvaluator
 
     public void RotateTowards(Vector3 direction)
     {
-        if (direction.sqrMagnitude > 0.01f)
-        {
-            Quaternion targetRotation = Quaternion.LookRotation(direction + new Vector3(90,0,0), Vector3.up);
-            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * 5f);
-        }
+        Quaternion targetRotation = Quaternion.LookRotation(direction, Vector3.up);
+        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * 5f);
     }
 
     private void OnDrawGizmosSelected()
