@@ -1,7 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
 
 public class CollectBubble : MonoBehaviour, I_TransitionEvaluator
 {
@@ -10,6 +13,7 @@ public class CollectBubble : MonoBehaviour, I_TransitionEvaluator
     [SerializeField] float AccepableMovementAngle;
     [SerializeField] Vector3 TargetFloorPosition;
     [SerializeField] private GameObject explosionParticle;
+    [SerializeField] private UnityEvent robotExplosion;
 
     [SerializeField] BoolReference isCollecting;
 
@@ -40,10 +44,20 @@ public class CollectBubble : MonoBehaviour, I_TransitionEvaluator
         else{
             this.GetComponent<NavMeshAgent>().SetDestination(TargetFloorPosition);
         }
-        bool inPosToCollect = this.transform.position.x == Target.transform.position.x && this.transform.position.z == Target.transform.position.z;
-        if (inPosToCollect)
+
+        Vector3 target = Target.transform.position;
+        target.y = transform.position.y;
+        if (Vector3.Distance(transform.position, target) <= 2f)
         {
+            // Hook up here to the Quest Manager
+            ChecklistEntity ce = Target.GetComponentInChildren<ChecklistEntity>();
+            if(ce != null){
+                Debug.Log($"Successfully extracted checklist entity from {Target.name}");
+                ce.OnCollect();
+            }
             Destroy(this.Target.gameObject);
+            this.robotExplosion?.Invoke();
+            Instantiate(this.explosionParticle, TargetFloorPosition + (Vector3.up * 4.9f), Quaternion.identity);
             state.Transition(0);
         }
 

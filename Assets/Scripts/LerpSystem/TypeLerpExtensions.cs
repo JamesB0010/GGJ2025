@@ -10,7 +10,7 @@ public static class TypeLerpExtensions
     {
         updateCallback ??= (float val) => { Debug.Log(val);};
 
-        finishedCb ??= pkg => { Debug.Log("Finished lerping"); };
+        finishedCb ??= pkg => { };
 
         animCurve ??= GlobalLerpProcessor.linearCurve;
 

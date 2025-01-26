@@ -148,10 +148,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data:
-    id: 2
+    id: 1
     name: Green
     image: {fileID: 21300000, guid: c35597c3d7b4fb14980272e979b03dc1, type: 3}
-    prefab: {fileID: 6316846827985578370}
 --- !u!65 &5112367017022674934
 BoxCollider:
   m_ObjectHideFlags: 0

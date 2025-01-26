@@ -12,7 +12,7 @@ public class LilGuyWander : MonoBehaviour, I_TransitionEvaluator
     [SerializeField] private float lookAheadDistance;
     [SerializeField] private float avoidenceStrength;
     [SerializeField] private float playerDetectionRange;
-    private LilGuySharedData sharedData;
+    [SerializeField] private LilGuySharedData sharedData;
 
     private Vector3 targetDirection;
     private float wanderAngle;
@@ -27,7 +27,6 @@ public class LilGuyWander : MonoBehaviour, I_TransitionEvaluator
 
     public void Behave(State state)
     {
-        Debug.Log("Wander");
         Vector3 velocity = this.CalculateWanderForce();
         velocity += this.calculateAvoidenceForce(velocity);
         this.Move(velocity);

@@ -39,7 +39,7 @@ namespace EvolveGames
                     if (Index >= TextToWrite.Length)
                     {
                         TextElement = null;
-                        Debug.Log("DialogEnd");
+                        // Debug.Log("DialogEnd");
                         return;
                     }
                 }
