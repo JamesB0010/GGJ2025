@@ -137,34 +137,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   guid: e07b1330edcc70d498ff56eec608636a
   parent: {fileID: 11400000}
-  graphEditorPosition: {x: -25, y: 297}
+  graphEditorPosition: {x: -18.399994, y: 312.8}
   description: A wonder position has been chose so the lil guy will wonder to it
   EnterStateEvent:
     m_PersistentCalls:
       m_Calls: []
   BehaveEvent:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3207599503958374580, guid: 4f42eb38b051dae4dbb85f8ddd1b8d71,
-          type: 3}
-        m_TargetAssemblyTypeName: LilGuyWander, Assembly-CSharp
-        m_MethodName: Behave
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   ExitStateEvent:
     m_PersistentCalls:
       m_Calls: []
   stateConnections:
     stateConnections:
     - stateTo: {fileID: 8618638473977610625}
-      transitionHandleMethod: 2
+      transitionHandleMethod: 0
       SelectedTransitionConditionEvaluator: 0
       AgentPrefab: {fileID: 1410990483271987467, guid: 4f42eb38b051dae4dbb85f8ddd1b8d71,
         type: 3}
@@ -214,27 +201,14 @@ MonoBehaviour:
       m_Calls: []
   BehaveEvent:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5175438408342871319, guid: 4f42eb38b051dae4dbb85f8ddd1b8d71,
-          type: 3}
-        m_TargetAssemblyTypeName: LilGuyRunAway, Assembly-CSharp
-        m_MethodName: Behave
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   ExitStateEvent:
     m_PersistentCalls:
       m_Calls: []
   stateConnections:
     stateConnections:
     - stateTo: {fileID: 8616626906314292044}
-      transitionHandleMethod: 2
+      transitionHandleMethod: 0
       SelectedTransitionConditionEvaluator: 1
       AgentPrefab: {fileID: 1410990483271987467, guid: 4f42eb38b051dae4dbb85f8ddd1b8d71,
         type: 3}

@@ -2009,6 +2009,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1109327556687232591, guid: b6702d877176c67428a4100cd788da60,
+        type: 3}
+      propertyPath: GetTarget.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3866465422694750073}
+    - target: {fileID: 1109327556687232591, guid: b6702d877176c67428a4100cd788da60,
+        type: 3}
+      propertyPath: GetTarget.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: roboAssistAi, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 2686221551238477103, guid: b6702d877176c67428a4100cd788da60,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2074,11 +2084,119 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerMaster
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5750824251975581893, guid: b6702d877176c67428a4100cd788da60, type: 3}
+    - {fileID: 7548287189877065685, guid: b6702d877176c67428a4100cd788da60, type: 3}
+    - {fileID: 717108847262424139, guid: b6702d877176c67428a4100cd788da60, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 75805916486335533, guid: b6702d877176c67428a4100cd788da60,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3866465422694750073}
   m_SourcePrefab: {fileID: 100100000, guid: b6702d877176c67428a4100cd788da60, type: 3}
+--- !u!1 &3866465422694750069 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 75805916486335533, guid: b6702d877176c67428a4100cd788da60,
+    type: 3}
+  m_PrefabInstance: {fileID: 3866465422694750068}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3866465422694750070 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 61982419056188350, guid: b6702d877176c67428a4100cd788da60,
+    type: 3}
+  m_PrefabInstance: {fileID: 3866465422694750068}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a19f264845aa60f4490d7571e05b2234, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3866465422694750071 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5976227681412459178, guid: b6702d877176c67428a4100cd788da60,
+    type: 3}
+  m_PrefabInstance: {fileID: 3866465422694750068}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cc7d80709e0cb340a7f22dc260a0065, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &3866465422694750072 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 616825728284231613, guid: b6702d877176c67428a4100cd788da60,
+    type: 3}
+  m_PrefabInstance: {fileID: 3866465422694750068}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3866465422694750073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3866465422694750069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 782d5ee5149a707469ebf4fcff7339cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idle: {fileID: 1308565831893287894, guid: 6904921a8ff22994fa5d0ee017390a3a, type: 2}
+  follow: {fileID: -5551818321510390713, guid: 6904921a8ff22994fa5d0ee017390a3a, type: 2}
+  collect: {fileID: -9210791070343471647, guid: 6904921a8ff22994fa5d0ee017390a3a,
+    type: 2}
+  Player: {fileID: 3866465422694750072}
+  Speed: 10
+  Rotation: 1
+  AccepableMovementAngle: 10
+  MoveCooldown: 6
+  isPlayerMoving: {fileID: 11400000, guid: 8fbd38c032a3fe741b89c78e4c253674, type: 2}
+  isCollecting: {fileID: 11400000, guid: be9d8f9f6970e1145ba1d21b25f1275f, type: 2}
+  Player_Follow: {fileID: 3866465422694750072}
+  Follow_Speed: 15
+  Follow_Rotation: 10
+  StopDistance: 5
+  Follow_AccepableMovementAngle: 5
+  isMoving: {fileID: 11400000, guid: 8fbd38c032a3fe741b89c78e4c253674, type: 2}
+  Follow_isCollecting: {fileID: 11400000, guid: be9d8f9f6970e1145ba1d21b25f1275f,
+    type: 2}
+  Target: {fileID: 0}
+  Collect_Rotation: 10
+  Collect_AccepableMovementAngle: 20
+  Collect_TargetFloorPosition: {x: 0, y: 0, z: 0}
+  explosionParticle: {fileID: 100000, guid: c9d5cd88175043e4682f5575c3340d37, type: 3}
+  robotExplosion:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3866465422694750071}
+        m_TargetAssemblyTypeName: BloomOnExplosion, Assembly-CSharp
+        m_MethodName: OnExplosion
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3866465422694750070}
+        m_TargetAssemblyTypeName: robotFaces, Assembly-CSharp
+        m_MethodName: OnExplosion
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  Collection_isCollecting: {fileID: 11400000, guid: be9d8f9f6970e1145ba1d21b25f1275f,
+    type: 2}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
