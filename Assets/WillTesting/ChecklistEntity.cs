@@ -15,6 +15,7 @@ public class ChecklistEntity : MonoBehaviour
     [SerializeField] public CreatureData data;
     [SerializeField] private GameObject questManager;
     private QuestManager questScript;
+    public float spawnYPos;
 
     private void Start()
     {

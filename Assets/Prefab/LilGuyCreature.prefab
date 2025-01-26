@@ -141,7 +141,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 438934681523411806}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.00000003774895, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.47276, y: 0.45200008, z: 4.1045}
   m_LocalScale: {x: 0.57574, y: 0.57574, z: 0.57574}
   m_ConstrainProportionsScale: 0
@@ -197,11 +197,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 848d5d47cc73d0b4e92f1ff85140f797, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 5
-  circleDistance: 3.86
-  circleRadius: 0.66
+  maxSpeed: 0.76
+  circleDistance: 3.58
+  circleRadius: 1.24
   angleChange: 30
-  lookAheadDistance: 2.2
+  lookAheadDistance: 4.73
   avoidenceStrength: 50
   playerDetectionRange: 6
   sharedData: {fileID: 8581479391903827420}
@@ -235,6 +235,7 @@ MonoBehaviour:
   visualTransform: {fileID: 8652981881683492777}
   bodyAnimator: {fileID: 474791955193159907}
   bodyCollider: {fileID: 549938993371258388}
+  containerBubble: {fileID: 0}
   rotationSpeed: 33
   upwardSpeed: 0.1
 --- !u!114 &8581479391903827420
@@ -337,6 +338,7 @@ MonoBehaviour:
     name: Hehee
     image: {fileID: 21300000, guid: 0cceb88d25459ae43bd9146aaf2b406e, type: 3}
   questManager: {fileID: 0}
+  spawnYPos: 5
 --- !u!1 &452101494440549792
 GameObject:
   m_ObjectHideFlags: 0

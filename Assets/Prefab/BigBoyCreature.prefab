@@ -280,14 +280,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 848d5d47cc73d0b4e92f1ff85140f797, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 10
-  circleDistance: 3.86
-  circleRadius: 0.66
+  maxSpeed: 0.76
+  circleDistance: 3.58
+  circleRadius: 1.24
   angleChange: 30
-  lookAheadDistance: 2.2
+  lookAheadDistance: 4.13
   avoidenceStrength: 50
   playerDetectionRange: 6
-  sharedData: {fileID: 9184202717534219572}
+  sharedData: {fileID: 8581479391903827420, guid: 737c44d3f6b815144ad4286a81f43d17,
+    type: 3}
   itemsToAvoid: []
 --- !u!114 &5175438408342871319
 MonoBehaviour:
@@ -331,6 +332,7 @@ MonoBehaviour:
   visualTransform: {fileID: 4372011784960958298}
   bodyAnimator: {fileID: 5431005150754464566}
   bodyCollider: {fileID: 6139261823557175249}
+  containerBubble: {fileID: 0}
   rotationSpeed: 33
   upwardSpeed: 0.1
 --- !u!114 &7602656241455918043
@@ -372,8 +374,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.81030726
-  m_Center: {x: 0.11367679, y: -0.12596619, z: -0.058374286}
+  m_Radius: 1.0980641
+  m_Center: {x: 0.11367679, y: 0.16179061, z: -0.058374286}
 --- !u!54 &700724102041658884
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -418,6 +420,7 @@ MonoBehaviour:
     name: Oughh
     image: {fileID: 21300000, guid: 2b6df39060153bd4492d766f407f83a7, type: 3}
   questManager: {fileID: 0}
+  spawnYPos: 2.5
 --- !u!1 &1746617364346339341
 GameObject:
   m_ObjectHideFlags: 0
@@ -1753,7 +1756,7 @@ Transform:
   m_GameObject: {fileID: 9120301244157608228}
   serializedVersion: 2
   m_LocalRotation: {x: -0.4689295, y: -0.5292494, z: -0.52924967, w: 0.46892965}
-  m_LocalPosition: {x: 0.4415493, y: 0.41557512, z: -0.5275798}
+  m_LocalPosition: {x: 0.4415493, y: 1.06, z: -0.5275798}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children:
