@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   guid: d3b8c19e29adcd64da4e43235aa02c96
   parent: {fileID: 11400000}
-  graphEditorPosition: {x: 303.99997, y: 93.28154}
+  graphEditorPosition: {x: 310, y: 101}
   description: 
   EnterStateEvent:
     m_PersistentCalls:
@@ -137,7 +137,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   guid: e07b1330edcc70d498ff56eec608636a
   parent: {fileID: 11400000}
-  graphEditorPosition: {x: -32.95997, y: 280.79993}
+  graphEditorPosition: {x: -25, y: 297}
   description: A wonder position has been chose so the lil guy will wonder to it
   EnterStateEvent:
     m_PersistentCalls:
@@ -207,7 +207,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   guid: f64a258027d56424abb837fcad4288fe
   parent: {fileID: 11400000}
-  graphEditorPosition: {x: 293.5666, y: 288.8}
+  graphEditorPosition: {x: 333, y: 329}
   description: 
   EnterStateEvent:
     m_PersistentCalls:
