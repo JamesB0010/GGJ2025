@@ -199,7 +199,7 @@ PrefabInstance:
     - target: {fileID: 4498877733033130114, guid: e8c3d76127590114384587011f5166b2,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.60599995
+      value: 0.54
       objectReference: {fileID: 0}
     - target: {fileID: 4498877733033130114, guid: e8c3d76127590114384587011f5166b2,
         type: 3}
@@ -224,12 +224,12 @@ PrefabInstance:
     - target: {fileID: 4498877733033130114, guid: e8c3d76127590114384587011f5166b2,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.402
+      value: -0.378
       objectReference: {fileID: 0}
     - target: {fileID: 4498877733033130114, guid: e8c3d76127590114384587011f5166b2,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.199
+      value: -0.676
       objectReference: {fileID: 0}
     - target: {fileID: 4498877733033130114, guid: e8c3d76127590114384587011f5166b2,
         type: 3}
@@ -261,6 +261,31 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 4582019823524865576}
+    - target: {fileID: 8564853068247438599, guid: e8c3d76127590114384587011f5166b2,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9177681089890018437, guid: e8c3d76127590114384587011f5166b2,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9177681089890018437, guid: e8c3d76127590114384587011f5166b2,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9177681089890018437, guid: e8c3d76127590114384587011f5166b2,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9177681089890018437, guid: e8c3d76127590114384587011f5166b2,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 8745889326511309382, guid: e8c3d76127590114384587011f5166b2, type: 3}

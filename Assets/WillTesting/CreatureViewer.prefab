@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 4498877733033130114}
   - component: {fileID: 6881551417292266599}
   - component: {fileID: 1488910203610959694}
+  - component: {fileID: 4354197792365155620}
+  - component: {fileID: 4616996944616012612}
   m_Layer: 0
   m_Name: CreatureViewer
   m_TagString: Untagged
@@ -66,7 +68,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d0f245274f63c524b88cf841440a944c, type: 2}
+  - {fileID: 2100000, guid: 1a99026d00a35a340b49a44b953160cc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -88,6 +90,44 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!95 &4354197792365155620
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 590903335263782773}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f3e9a251ff99c7242b4eee65f3b943ed, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4616996944616012612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 590903335263782773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9fc9f887771816488fe25e43f977222, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 4354197792365155620}
+  openClip: {fileID: 7400000, guid: bb12f427cdcc81b42b9fbeb1cfb6d8f5, type: 2}
+  closeClip: {fileID: 7400000, guid: efa50609a02e5044881254ae0e3e9afb, type: 2}
+  creatureListMesh: {fileID: 1488910203610959694}
+  creatureListUI: {fileID: 8564853068247438599}
 --- !u!1 &1911503399755322394
 GameObject:
   m_ObjectHideFlags: 0
