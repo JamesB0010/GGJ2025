@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   guid: df4cd95178008864e8b3257ba267c287
   parent: {fileID: 11400000}
-  graphEditorPosition: {x: 537.60004, y: 426.4}
+  graphEditorPosition: {x: 529, y: 430}
   description: player tells the robot to collect the bubble
   EnterStateEvent:
     m_PersistentCalls:
@@ -85,7 +85,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   guid: 38fe434993c0371459a5099ff4ae1827
   parent: {fileID: 11400000}
-  graphEditorPosition: {x: 12, y: 407}
+  graphEditorPosition: {x: 21, y: 422}
   description: Passive state that continues forever until the end of the level
   EnterStateEvent:
     m_PersistentCalls:
