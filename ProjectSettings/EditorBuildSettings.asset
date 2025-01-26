@@ -9,8 +9,8 @@ EditorBuildSettings:
     path: Assets/Scenes/Menus/MainMenu.unity
     guid: e5d79e52917657843917364948fc65f5
   - enabled: 1
-    path: Assets/Scenes/sebguntestscene.unity
-    guid: 5e38125691dafc548b0cd95f436a3ad3
+    path: Assets/Scenes/James Test Scene.unity
+    guid: 97357c23e0db09c4e9cf3da36acb62f7
   - enabled: 1
     path: Assets/Scenes/Menus/WinScreen.unity
     guid: a703e1457dd3ae6448e365fe12052d88

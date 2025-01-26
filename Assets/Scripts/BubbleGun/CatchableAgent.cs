@@ -15,6 +15,7 @@ public class CatchableAgent : MonoBehaviour
     [SerializeField] public Renderer agentRenderer;
     [SerializeField] public int slippyMatIndex;
     [SerializeField] public Transform bubbleAnchor;
+    [SerializeField] ParticleSystem wetPS;
 
 
     void Start()
@@ -33,6 +34,7 @@ public class CatchableAgent : MonoBehaviour
                 slippyMat.SetFloat("_Moistness", slippyMat.GetFloat("_Moistness")-(dryingRate*Time.deltaTime));
             }
         }
+        wetPS.gameObject.SetActive(!isCaptured && moistness > moistnessThreshold);
     }
 
     void GetCaptured()
